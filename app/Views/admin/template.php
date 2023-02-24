@@ -116,11 +116,36 @@
                             </span>
                             <h4 class="text-section">Navigasi</h4>
                         </li>
-                        <li class="nav-item <?= ($uri->getSegment(2) === "product") ? "active" : "" ?>">
-                            <a href="<?= base_url('eshop-admin/product') ?>">
-                                <i class="fas fa-utensils"></i>
+                        <li class="nav-item <?= ($uri->getSegment(2) === "products" || $uri->getSegment(2) === "product-stock" || $uri->getSegment(2) === "warehouses" || $uri->getSegment(2) === "warehouse_transfers") ? "active submenu" : "" ?>">
+                            <a data-toggle="collapse" href="#nav-produk">
+                                <i class="fas fa-archive"></i>
                                 <p>Produk</p>
+                                <span class="caret"></span>
                             </a>
+                            <div class="collapse" id="nav-produk">
+                                <ul class="nav nav-collapse">
+                                    <li class="<?= ($uri->getSegment(2) === "products") ? "active" : "" ?>">
+                                        <a href="<?= base_url('products'); ?>">
+                                            <span class="sub-item">Produk</span>
+                                        </a>
+                                    </li>
+                                    <li class="<?= ($uri->getSegment(2) === "product-stock") ? "active" : "" ?>">
+                                        <a href="<?= base_url('product-stock'); ?>">
+                                            <span class="sub-item">Penyesuaian Stok</span>
+                                        </a>
+                                    </li>
+                                    <li class="<?= ($uri->getSegment(2) === "warehouses") ? "active" : "" ?>">
+                                        <a href="<?= base_url('warehouses'); ?>">
+                                            <span class="sub-item">Gudang</span>
+                                        </a>
+                                    </li>
+                                    <li class="<?= ($uri->getSegment(2) === "warehouse_transfers") ? "active" : "" ?>">
+                                        <a href="<?= base_url('warehouse_transfers'); ?>">
+                                            <span class="sub-item">Transfer Barang</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-section">
                             <span class="sidebar-mini-icon">
@@ -128,10 +153,10 @@
                             </span>
                             <h4 class="text-section">Navigasi Pengguna</h4>
                         </li>
-                        <li class="nav-item <?= ($uri->getSegment(2) === "user") ? "active" : "" ?>">
-                            <a href="<?= base_url('eshop-admin/user') ?>">
+                        <li class="nav-item <?= ($uri->getSegment(2) === "admin-accounts") ? "active" : "" ?>">
+                            <a href="<?= base_url('eshop-admin/admin-accounts') ?>">
                                 <i class="fas fa-users"></i>
-                                <p>Pengguna</p>
+                                <p>Akun Admin</p>
                             </a>
                         </li>
                     </ul>
@@ -141,33 +166,37 @@
         <!-- End Sidebar -->
 
         <div class="main-panel">
-            <div class="content">
-                <div class="panel-header bg-primary-gradient">
-                    <div class="page-inner py-5">
-                        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-                            <div>
-                                <?= $this->renderSection("header_section") ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="page-inner mt--5">
+			<div class="content">
+				<div class="panel-header bg-primary-gradient">
+					<div class="page-inner py-5">
+						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+							<div>
+								<h3 class="text-white pb-2 fw-bold">
+									<?= $this->renderSection("page_title") ?>
+									<br>
+									<small class='text-white op-7'><?= $this->renderSection("page_subtitle") ?></small>
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="page-inner mt--5">
                     <?php if(session()->has('msg_status')) : ?>
                     <div class="alert alert-<?= session('msg_status') ?>" role="alert">
                         <?= session('msg') ?>
                     </div>
-                    <?php endif; ?>
-                    <?= $this->renderSection("container_section") ?>
-                </div>
-            </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="copyright ml-auto">
-                        Copyright &copy; <?= config("App")->appName ?> - <?= config("App")->companyName ?>
-                    </div>
-                </div>
-            </footer>
-        </div>
+                    <?php endif; ?>                 
+					<?= $this->renderSection("page_content") ?>
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="pull-right">
+						Copyright &copy; <?= config("App")->appName ?> - <?= config("App")->companyName ?>
+					</div>
+				</div>
+			</footer>
+		</div>
 
     </div>
     <!--   Core JS Files   -->
@@ -189,10 +218,10 @@
     <script src="<?= base_url('atlantis-lite') ?>/js/atlantis.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#datatables-default').DataTable();
+            $('#basic-datatables').DataTable();
         });
     </script>
-    <?= $this->renderSection("script_section") ?>
+    <?= $this->renderSection("page_script") ?>
 </body>
 
 </html>
