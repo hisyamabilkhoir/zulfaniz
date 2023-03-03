@@ -11,6 +11,7 @@ class AdminCategoryController extends BaseController
     public function __construct()
     {
         $this->categoryModel = new \App\Models\CategoryModel();
+        helper("form");
     }
 
     public function admin_category()
@@ -24,16 +25,20 @@ class AdminCategoryController extends BaseController
 
     public function admin_category_add_process()
     {
+        $validation = \Config\Services::validation();
         if (!$this->validate([
             'name'      => [
-                'rules' => 'is_unique[categories.name]',
+                'username' => 'is_unique[categories.name]',
                 'errors' => [
                     'is_unique' => 'Nama kategori produk sudah ada',
                 ],
             ],
         ])) {
-            $validation = \Config\Services::validation();
-            return redirect()->to('eshop-admin/categories')->withInput();
+            $data = [
+                'categories' => $this->categoryModel->findAll(),
+                'validation' => \Config\Services::validation(),
+            ];
+            return view('admin/admin_category', $data);
         }
 
         $name = $this->request->getPost("name");

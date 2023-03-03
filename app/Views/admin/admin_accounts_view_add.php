@@ -39,35 +39,49 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name"> Nama </label>
-                            <input type="text" class="form-control <?= ($validation->hasError('name')) ? 'is-invalid' : ''; ?>" name="name" id="name" placeholder="Masukan nama . . . " value="<?= (old('name')); ?>" required autocomplete="off">
+                            <input type="text" class="form-control <?= ($validation->hasError('name')) ? 'is-invalid' : ''; ?>" name="name" id="name" placeholder="Masukan nama . . . " value="<?= set_value('name'); ?>" required autocomplete="off">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('name'); ?>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="email"> Email </label>
-                            <input type="email" class="form-control <?= ($validation->hasError('email')) ? 'is-invalid' : ''; ?>" name="email" id="email" placeholder="Masukan email . . . " value="<?= (old('email')); ?>" required autocomplete="off">
+                            <input type="email" class="form-control <?= ($validation->hasError('email')) ? 'is-invalid' : ''; ?>" name="email" id="email" placeholder="Masukan email . . . " value="<?= set_value('email'); ?>" required autocomplete="off">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('email'); ?>
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="phone"> Nomor Telepon </label>
+                            <input type="text" class="form-control <?= ($validation->hasError('phone')) ? 'is-invalid' : ''; ?>" name="phone" id="phone" placeholder="Masukan nomor telepon . . . " value="<?= set_value('phone'); ?>" required autocomplete="off">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('phone'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address"> Alamat</label>
+                            <textarea type="text" class="form-control <?= ($validation->hasError('address')) ? 'is-invalid' : ''; ?>" name="address" id="address" placeholder="Enter Address ..." value="<?= set_value('address'); ?>" required autocomplete="off"><?= set_value('address'); ?></textarea>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('address'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="username"> Username </label>
-                            <input type="text" class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" name="username" id="username" placeholder="Masukan username . . . " value="<?= (old('username')); ?>" required autocomplete="off">
+                            <input type="text" class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" name="username" id="username" placeholder="Masukan username . . . " value="<?= set_value('username'); ?>" required autocomplete="off">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('username'); ?>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password"> Password</label>
-                            <input type="password" class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" name="password" id="password" placeholder="Masukan password . . . " value="<?= (old('password')); ?>" required autocomplete="off">
+                            <input type="password" class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" name="password" id="password" placeholder="Masukan password . . . " value="<?= set_value('password'); ?>" required autocomplete="off">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('password'); ?>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="konfirmasi_password"> Konfirmasi Password</label>
-                            <input type="password" class="form-control <?= ($validation->hasError('confirm_password')) ? 'is-invalid' : ''; ?>" name="confirm_password" id="konfirmasi_password" placeholder="Masukan konfirmasi password . . . " value="<?= (old('confirm_password')); ?>" required autocomplete="off">
+                            <input type="password" class="form-control <?= ($validation->hasError('confirm_password')) ? 'is-invalid' : ''; ?>" name="confirm_password" id="konfirmasi_password" placeholder="Masukan konfirmasi password . . . " value="<?= set_value('confirm_password'); ?>" required autocomplete="off">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('confirm_password'); ?>
                             </div>

@@ -54,10 +54,12 @@
             </div>
             <div class="card-body">
                 <form method="post" action="<?= base_url("eshop-admin/categories/add_process"); ?>">
-                    <div class="form-group <?= ($validation->hasError('name')) ? 'has-error has-feedback' : ''; ?>">
-                        <label>Nama</label>
-                        <input type="text" id="editName" class="form-control" value="<?= old('name'); ?>" name="name" placeholder="Nama" required>
-                        <small class="form-text text-muted"><?= $validation->getError('name') ?></small>
+                    <div class="form-group">
+                        <label for="name"> Nama </label>
+                        <input type="text" class="form-control <?= ($validation->hasError('name')) ? 'is-invalid' : ''; ?>" name="name" id="name" placeholder="Masukan nama . . . " value="<?= set_value('name'); ?>" required autocomplete="off">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('name'); ?>
+                        </div>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-block btn-primary">
