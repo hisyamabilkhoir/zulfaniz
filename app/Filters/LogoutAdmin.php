@@ -12,7 +12,7 @@ class LogoutAdmin implements FilterInterface
     {
         // jika admin sudah login
         if (session()->get('logged_in_admin')) {
-            return redirect()->back();
+            return redirect('eshop-admin/dashboard');
         }
     }
 

@@ -166,37 +166,37 @@
         <!-- End Sidebar -->
 
         <div class="main-panel">
-			<div class="content">
-				<div class="panel-header bg-primary-gradient">
-					<div class="page-inner py-5">
-						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-							<div>
-								<h3 class="text-white pb-2 fw-bold">
-									<?= $this->renderSection("page_title") ?>
-									<br>
-									<small class='text-white op-7'><?= $this->renderSection("page_subtitle") ?></small>
-								</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="page-inner mt--5">
-                    <?php if(session()->has('msg_status')) : ?>
-                    <div class="alert alert-<?= session('msg_status') ?>" role="alert">
-                        <?= session('msg') ?>
+            <div class="content">
+                <div class="panel-header bg-primary-gradient">
+                    <div class="page-inner py-5">
+                        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                            <div>
+                                <h3 class="text-white pb-2 fw-bold">
+                                    <?= $this->renderSection("page_title") ?>
+                                    <br>
+                                    <small class='text-white op-7'><?= $this->renderSection("page_subtitle") ?></small>
+                                </h3>
+                            </div>
+                        </div>
                     </div>
-                    <?php endif; ?>                 
-					<?= $this->renderSection("page_content") ?>
-				</div>
-			</div>
-			<footer class="footer">
-				<div class="container-fluid">
-					<div class="pull-right">
-						Copyright &copy; <?= config("App")->appName ?> - <?= config("App")->companyName ?>
-					</div>
-				</div>
-			</footer>
-		</div>
+                </div>
+                <div class="page-inner mt--5">
+                    <?php if (session()->has('msg_status')) : ?>
+                        <div class="alert alert-<?= session('msg_status') ?>" role="alert">
+                            <?= session('msg') ?>
+                        </div>
+                    <?php endif; ?>
+                    <?= $this->renderSection("page_content") ?>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="pull-right">
+                        Copyright &copy; <?= config("App")->appName ?> - <?= config("App")->companyName ?>
+                    </div>
+                </div>
+            </footer>
+        </div>
 
     </div>
     <!--   Core JS Files   -->
