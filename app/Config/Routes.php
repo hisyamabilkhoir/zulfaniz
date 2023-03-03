@@ -32,6 +32,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 require "Routes/CustomerRoutes.php";
 require "Routes/AdminRoutes.php";
+require "Routes/AdminAccountRoutes.php";
+require "Routes/AdminCategoryRoutes.php";
 
 /*
  * --------------------------------------------------------------------
