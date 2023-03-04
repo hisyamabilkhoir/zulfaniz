@@ -147,6 +147,12 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item <?= ($uri->getSegment(2) === "categories") ? "active" : "" ?>">
+                            <a href="<?= base_url('eshop-admin/categories') ?>">
+                                <i class="fas fa-users"></i>
+                                <p>Kategori</p>
+                            </a>
+                        </li>
                         <li class="nav-section">
                             <span class="sidebar-mini-icon">
                                 <i class="fa fa-ellipsis-h"></i>

@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 require "Routes/CustomerRoutes.php";
 require "Routes/AdminRoutes.php";
 require "Routes/AdminAccountRoutes.php";
+require "Routes/AdminCategoryRoutes.php";
 
 /*
  * --------------------------------------------------------------------

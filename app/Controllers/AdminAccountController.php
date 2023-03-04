@@ -10,8 +10,7 @@ class AdminAccountController extends BaseController
     {
         $this->session = \Config\Services::session();
         $this->db = \Config\Database::connect();
-        // $this->validation =  \Config\Services::validation();
-
+        $this->validation =  \Config\Services::validation();
         $this->adminModel = new \App\Models\AdministratorModel();
         helper("form");
     }
@@ -78,11 +77,9 @@ class AdminAccountController extends BaseController
                 ],
             ]
         ])) {
-
             $data = [
                 'validation' => \Config\Services::validation(),
             ];
-
             return view('admin/admin_accounts_view_add', $data);
         }
 
