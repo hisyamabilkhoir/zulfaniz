@@ -43,7 +43,12 @@
     <link rel="stylesheet" href="<?= base_url('/template_customer') ?>/css/style.css">
     <link rel="stylesheet" href="<?= base_url('/template_customer') ?>/css/responsive.css">
 
-
+    <style>
+        .hero-slider .single-slider {
+            background-image: url('<?= base_url('banner/1.png') ?>');
+            image-orientation: none;
+        }
+    </style>
 
 </head>
 

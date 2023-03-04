@@ -181,11 +181,7 @@
                     </div>
                 </div>
                 <div class="page-inner mt--5">
-                    <?php if (session()->has('msg_status')) : ?>
-                        <div class="alert alert-<?= session('msg_status') ?>" role="alert">
-                            <?= session('msg') ?>
-                        </div>
-                    <?php endif; ?>
+                    <!-- Konten -->
                     <?= $this->renderSection("page_content") ?>
                 </div>
             </div>
@@ -211,6 +207,9 @@
     <!-- Datatables -->
     <script src="<?= base_url('atlantis-lite') ?>/js/plugin/datatables/datatables.min.js"></script>
 
+    <!-- Bootstrap Notify -->
+    <script src="<?= base_url('atlantis-lite') ?>/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
     <!-- Sweet Alert -->
     <script src="<?= base_url('atlantis-lite') ?>/js/plugin/sweetalert/sweetalert.min.js"></script>
 
@@ -220,6 +219,47 @@
         $(document).ready(function() {
             $('#basic-datatables').DataTable();
         });
+    </script>
+    <script>
+        <?php if (session()->getFlashdata('msg_status') == 'success') : ?>
+            $.notify({
+                // options
+                icon: 'flaticon-alarm-1',
+                title: 'Berhasil',
+                message: '<?= session()->getFlashdata('msg') ?>'
+            }, {
+                // settings
+                type: 'success',
+                delay: 3000,
+                timer: 3000,
+            });
+        <?php endif; ?>
+        <?php if (session()->getFlashdata('msg_status') == 'warning') : ?>
+            $.notify({
+                // options
+                icon: 'flaticon-alarm-1',
+                title: 'Peringatan!',
+                message: '<?= session()->getFlashdata('msg') ?>'
+            }, {
+                // settings
+                type: 'warning',
+                delay: 3000,
+                timer: 1000,
+            });
+        <?php endif; ?>
+        <?php if (session()->getFlashdata('msg_status') == 'error') : ?>
+            $.notify({
+                // options
+                icon: 'flaticon-alarm-1',
+                title: 'Terjadi Kesalahan ! ',
+                message: '<?= session()->getFlashdata('msg') ?>'
+            }, {
+                // settings
+                type: 'danger',
+                delay: 3000,
+                timer: 3000,
+            });
+        <?php endif; ?>
     </script>
     <?= $this->renderSection("page_script") ?>
 </body>

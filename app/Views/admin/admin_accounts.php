@@ -42,7 +42,9 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
+                                <th>No Telepon</th>
                                 <th>Email</th>
+                                <th>Alamat</th>
                                 <th>Status</th>
                                 <th class="text-center">Aksi</th>
                             </tr>
@@ -56,7 +58,9 @@
                                 <tr>
                                     <td class='text-center'><?= $d ?></td>
                                     <td><?= $admin_accounts->name ?></td>
+                                    <td><?= $admin_accounts->phone ?></td>
                                     <td><?= $admin_accounts->email ?></td>
+                                    <td><?= nl2br($admin_accounts->address) ?></td>
                                     <td class="text-center">
                                         <?php
                                         if ($admin_accounts->active == 0) {
@@ -67,7 +71,7 @@
                                         ?>
                                     </td>
                                     <td class='text-center'>
-                                        <a href="<?= base_url('admin_accounts/view_edit/' . $admin_accounts->id); ?>" class="btn btn-secondary btn-sm text-white">
+                                        <a href="<?= base_url('eshop-admin/admin-accounts/view-edit/' . $admin_accounts->id); ?>" class="btn btn-secondary btn-sm text-white">
                                             <i class="fa fa-cog"></i>
                                         </a>
                                     </td>

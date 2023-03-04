@@ -15,6 +15,13 @@
         .ftco-section {
             padding: 2em 0 !important;
         }
+
+        body {
+            background-image: url("<?= base_url('login/img/bg-login.jpg') ?>");
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100vh;
+        }
     </style>
 </head>
 
