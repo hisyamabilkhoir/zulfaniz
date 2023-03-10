@@ -24,7 +24,14 @@
             }
         });
     </script>
-
+    <!-- Trix Editor -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url('trix-editor') ?>/trix.css">
+    <script type="text/javascript" src="<?= base_url('trix-editor') ?>/trix.js"></script>
+    <style>
+        trix-toolbar [data-trix-button-group="file-tools"] {
+            display: none;
+        }
+    </style>
     <!-- CSS Files -->
     <link rel="stylesheet" href="<?= base_url('atlantis-lite') ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url('atlantis-lite') ?>/css/atlantis.min.css">
@@ -125,8 +132,13 @@
                             <div class="collapse" id="nav-produk">
                                 <ul class="nav nav-collapse">
                                     <li class="<?= ($uri->getSegment(2) === "products") ? "active" : "" ?>">
-                                        <a href="<?= base_url('products'); ?>">
+                                        <a href="<?= base_url('eshop-admin/products'); ?>">
                                             <span class="sub-item">Produk</span>
+                                        </a>
+                                    </li>
+                                    <li class="<?= ($uri->getSegment(2) === "categories") ? "active" : "" ?>">
+                                        <a href="<?= base_url('eshop-admin/categories'); ?>">
+                                            <span class="sub-item">Kategori</span>
                                         </a>
                                     </li>
                                     <li class="<?= ($uri->getSegment(2) === "product-stock") ? "active" : "" ?>">
@@ -146,12 +158,6 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
-                        <li class="nav-item <?= ($uri->getSegment(2) === "categories") ? "active" : "" ?>">
-                            <a href="<?= base_url('eshop-admin/categories') ?>">
-                                <i class="fas fa-users"></i>
-                                <p>Kategori</p>
-                            </a>
                         </li>
                         <li class="nav-section">
                             <span class="sidebar-mini-icon">
