@@ -71,10 +71,10 @@
         <div class="middle-inner">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-2 col-md-2 col-12">
+                    <div class="col-lg-3 col-md-3 col-12">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="<?= base_url('/template_customer') ?>/images/logo.png" alt="logo"></a>
+                            <a href="index.html"><img src="<?= base_url('/template_customer') ?>/images/zulfaniz-logo-header.jpg" alt="logo"></a>
                         </div>
                         <!--/ End Logo -->
                         <!-- Search Form -->
@@ -83,7 +83,7 @@
                             <!-- Search Form -->
                             <div class="search-top">
                                 <form class="search-form">
-                                    <input type="text" placeholder="Search here..." name="search">
+                                    <input type="text" placeholder="Cari Produk..." name="search">
                                     <button value="search" type="submit"><i class="ti-search"></i></button>
                                 </form>
                             </div>
@@ -92,62 +92,37 @@
                         <!--/ End Search Form -->
                         <div class="mobile-nav"></div>
                     </div>
-                    <div class="col-lg-8 col-md-7 col-12">
+                    <div class="col-lg-5 col-md-5 col-12">
                         <div class="search-bar-top">
                             <div class="search-bar">
-                                <select>
-                                    <option selected="selected">All Category</option>
-                                    <option>watch</option>
-                                    <option>mobile</option>
-                                    <option>kid’s item</option>
-                                </select>
+                                <!-- search -->
                                 <form>
-                                    <input name="search" placeholder="Search Products Here....." type="search">
+                                    <input name="search" placeholder="Cari Produk Disini....." type="search">
                                     <button class="btnn"><i class="ti-search"></i></button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-12">
+                    <div class="col-lg-4 col-md-4 col-12">
                         <div class="right-bar">
                             <!-- Search Form -->
                             <div class="sinlge-bar">
-                                <a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                            </div>
-                            <div class="sinlge-bar">
-                                <a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                                <?php
+                                if (session()->get('customer_id')) {
+                                    $url_profile = 'eshop-customer/profile';
+                                    $url_cart = 'eshop-customer/cart';
+                                    $text = config("LoginCustomer")->customerName;
+                                } else {
+                                    $url_profile = 'eshop-customer';
+                                    $url_cart = 'eshop-customer';
+                                    $text = 'Masuk';
+                                }
+                                ?>
+                                <a href="<?= base_url($url_profile); ?>" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"><small style="margin-left: 5px;"><?= $text; ?></small></i></a>
                             </div>
                             <div class="sinlge-bar shopping">
-                                <a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
-                                <!-- Shopping Item -->
-                                <div class="shopping-item">
-                                    <div class="dropdown-cart-header">
-                                        <span>2 Items</span>
-                                        <a href="#">View Cart</a>
-                                    </div>
-                                    <ul class="shopping-list">
-                                        <li>
-                                            <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                            <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                            <h4><a href="#">Woman Ring</a></h4>
-                                            <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                            <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                            <h4><a href="#">Woman Necklace</a></h4>
-                                            <p class="quantity">1x - <span class="amount">$35.00</span></p>
-                                        </li>
-                                    </ul>
-                                    <div class="bottom">
-                                        <div class="total">
-                                            <span>Total</span>
-                                            <span class="total-amount">$134.00</span>
-                                        </div>
-                                        <a href="checkout.html" class="btn animate">Checkout</a>
-                                    </div>
-                                </div>
-                                <!--/ End Shopping Item -->
+                                <a href="<?= base_url($url_cart); ?>" class="single-icon"><i class="ti-bag"></i> <span class="total-count">0</span></a>
+
                             </div>
                         </div>
                     </div>
@@ -160,30 +135,31 @@
                 <div class="cat-nav-head">
                     <div class="row">
                         <div class="col-lg-3"></div>
-                        <div class="col-lg-9 col-12">
+                        <div class="col-lg-9 col-12" style="align-items: center;">
                             <div class="menu-area">
                                 <!-- Main Menu -->
                                 <nav class="navbar navbar-expand-lg">
                                     <div class="navbar-collapse">
                                         <div class="nav-inner">
                                             <ul class="nav main-menu menu navbar-nav">
-                                                <li class="active"><a href="#">Home</a></li>
-                                                <li><a href="#">Product</a></li>
-                                                <li><a href="#">Service</a></li>
-                                                <li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="shop-grid.html">Shop Grid</a></li>
-                                                        <li><a href="cart.html">Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Pages</a></li>
-                                                <li><a href="#">Blog<i class="ti-angle-down"></i></a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="contact.html">Contact Us</a></li>
+                                                <?php
+                                                $request = \Config\Services::request();
+                                                $uri = $request->uri;
+                                                ?>
+                                                <li class="<?= ($uri->getSegment(1) === "") ? "active" : "" ?>"><a href="<?= base_url('/') ?>">Beranda</a></li>
+                                                <li class="<?= ($uri->getSegment(1) === "products") ? "active" : "" ?>"><a href="<?= base_url('/products') ?>">Produk</a></li>
+                                                <li class="<?= ($uri->getSegment(1) === "contact") ? "active" : "" ?>"><a href="<?= base_url('/contact') ?>">Hubungi Kami</a></li>
+                                                <?php if (session()->get('customer_id')) : ?>
+                                                    <li><a href="#">Akun<i class="ti-angle-down"></i></a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="<?= base_url('/eshop-customer/order-histories') ?>">Riwayat Pesanan</a></li>
+                                                            <li><a href="<?= base_url('/eshop-customer/profile') ?>">Profile</a></li>
+                                                            <li><a href="<?= base_url('/eshop-customer/cart') ?>">Keranjang</a></li>
+                                                            <li><a href="<?= base_url('/eshop-customer/checkout') ?>">Keranjang</a></li>
+                                                            <li><a href="<?= base_url('/eshop-customer/logout') ?>">Keluar</a></li>
+                                                        </ul>
+                                                    </li>
+                                                <?php endif; ?>
                                             </ul>
                                         </div>
                                     </div>
@@ -212,23 +188,21 @@
                         <!-- Single Widget -->
                         <div class="single-footer about">
                             <div class="logo">
-                                <a href="index.html"><img src="<?= base_url('/template_customer') ?>/images/logo2.png" alt="#"></a>
+                                <a href="index.html"><img src="<?= base_url('/template_customer') ?>/images/zulfaniz-logo-footer.png" alt="#"></a>
                             </div>
-                            <p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-                            <p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
+                            <p class="text">Kini menghadirkan beragam kebutuhan fashion muslimah mulai dari anak-anak hingga dewasa dari berbagai macam jenis seperti kain, hijab, busana yang lengkap akan pilihan</p>
+                            <p class="call">Punya Pertanyaan? Hubungi !<span><a href="tel:123456789">+62 859 7372 9267</a></span></p>
                         </div>
                         <!-- End Single Widget -->
                     </div>
                     <div class="col-lg-2 col-md-6 col-12">
                         <!-- Single Widget -->
                         <div class="single-footer links">
-                            <h4>Information</h4>
+                            <h4>Informasi</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Faq</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Help</a></li>
+                                <li><a href="<?= base_url('/') ?>">Beranda</a></li>
+                                <li><a href="<?= base_url('products') ?>">Produk</a></li>
+                                <li><a href="<?= base_url('contact') ?>">Hubungi Kami</a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -238,10 +212,9 @@
                         <div class="single-footer links">
                             <h4>Customer Service</h4>
                             <ul>
-                                <li><a href="#">Payment Methods</a></li>
-                                <li><a href="#">Money-back</a></li>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Shipping</a></li>
+                                <li><a href="#">Cara Pembayaran</a></li>
+                                <li><a href="#">Garansi</a></li>
+                                <li><a href="#">Lacak Paket</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                             </ul>
                         </div>
@@ -250,14 +223,15 @@
                     <div class="col-lg-3 col-md-6 col-12">
                         <!-- Single Widget -->
                         <div class="single-footer social">
-                            <h4>Get In Tuch</h4>
+                            <h4>Kunjungi Kami</h4>
                             <!-- Single Widget -->
                             <div class="contact">
                                 <ul>
-                                    <li>NO. 342 - London Oxford Street.</li>
-                                    <li>012 United Kingdom.</li>
-                                    <li>info@eshop.com</li>
-                                    <li>+032 3456 7890</li>
+                                    <li>Jalan Pahlawan No. 17</li>
+                                    <li>Desa Dawuan</li>
+                                    <li>Kec. Tengah Tani, Kab. Cirebon</li>
+                                    <li>zulfanizbusiness@gmail.com</li>
+                                    <li>+62 859 7372 9267</li>
                                 </ul>
                             </div>
                             <!-- End Single Widget -->
@@ -280,7 +254,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-12">
                             <div class="left">
-                                <p>Copyright © 2020 <a href="http://www.wpthemesgrid.com" target="_blank">Wpthemesgrid</a> - All Rights Reserved.</p>
+                                <p> Copyright &copy; <?= config("App")->appName ?> - <?= config("App")->companyName ?> - All Rights Reserved.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-12">

@@ -23,10 +23,10 @@
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <form action="<?= base_url('eshop-admin/process-login') ?>" method="POST" class="signin-form">
+                        <form action="<?= base_url('eshop-customer/process-login') ?>" method="POST" class="signin-form">
                             <div class="form-group mt-3 mb-3">
-                                <input type="text" name="username" autofocus class="form-control mb-4" required>
-                                <label class="form-control-placeholder" for="username">Username / Email</label>
+                                <input type="text" name="phone" autofocus class="form-control mb-4" required>
+                                <label class="form-control-placeholder" for="phone">No. Handphone / Email</label>
                             </div>
                             <div class="form-group">
                                 <input id="password-field" name="password" type="password" class="form-control" required>
@@ -38,6 +38,9 @@
                             </div>
                         </form>
                         <hr>
+                        <div class="text-center">
+                            <small>Belum punya akun ? <a href="<?= base_url('/eshop-customer/registration') ?>">Registrasi</a></small>
+                        </div>
                     </div>
                 </div>
             </div>

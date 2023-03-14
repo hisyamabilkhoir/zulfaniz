@@ -33,13 +33,16 @@ class AdminController extends BaseController
 
     public function login()
     {
-        return view('admin/login');
+        $data = [
+            'title' => 'Halaman Login'
+        ];
+        return view('admin/login', $data);
     }
 
     public function process_login()
     {
         $username = $this->request->getPost("username");
-        $password = $this->request->getPost("password");
+        $password = $this->request->getPost("password") || null;
 
         $admin = $this->adminModel
             ->where("username", $username)
