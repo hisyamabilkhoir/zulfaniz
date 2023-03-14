@@ -7,10 +7,12 @@ use App\Controllers\BaseController;
 class AdminCategoryController extends BaseController
 {
     private $categoryModel;
+    private $productModel;
 
     public function __construct()
     {
         $this->categoryModel = new \App\Models\CategoryModel();
+        $this->productModel = new \App\Models\ProductModel();
         helper("form");
     }
 
@@ -25,20 +27,16 @@ class AdminCategoryController extends BaseController
 
     public function admin_category_add_process()
     {
-        $validation = \Config\Services::validation();
         if (!$this->validate([
             'name'      => [
-                'username' => 'is_unique[categories.name]',
+                'rules' => 'is_unique[categories.name]',
                 'errors' => [
                     'is_unique' => 'Nama kategori produk sudah ada',
                 ],
             ],
         ])) {
-            $data = [
-                'categories' => $this->categoryModel->findAll(),
-                'validation' => \Config\Services::validation(),
-            ];
-            return view('admin/admin_category', $data);
+            $validation = \Config\Services::validation();
+            return redirect()->to(base_url('/eshop-admin/categories'))->withInput()->with('validation', $validation);
         }
 
         $name = $this->request->getPost("name");
@@ -48,7 +46,7 @@ class AdminCategoryController extends BaseController
         ]);
         // dd()
         session()->setFlashdata('notif_status', 'success');
-        session()->setFlashdata('notif_content', 'Kategori Produk telah berhasil ditambahkan');
+        session()->setFlashdata('notif_content', "Kategori $name berhasil ditambahkan!");
         return redirect()->to(base_url('eshop-admin/categories'));
     }
 
@@ -58,13 +56,14 @@ class AdminCategoryController extends BaseController
         $name = $this->request->getPost('name');
         $dataNamaSama = $this->categoryModel->where(['name' => $name, 'id !=' => $id])->first();
         if ($dataNamaSama) {
-            $validation = \Config\Services::validation();
-            return redirect()->to('eshop-admin/categories')->withInput()->with('validation', $validation);
+            session()->setFlashdata('msg_status', 'warning');
+            session()->setFlashdata('msg', "Nama kategori produk $name sudah ada");
+            return redirect()->to(base_url('eshop-admin/categories'));
         }
         $this->categoryModel->where("id", $id)->set(["name" => $name])->update();
 
         session()->setFlashdata('notif_status', 'success');
-        session()->setFlashdata('notif_content', 'Kategori Produk telah berhasil disimpan');
+        session()->setFlashdata('notif_content', "Kategori $name berhasil disimpan!");
         return redirect()->to(base_url('eshop-admin/categories'));
     }
 
@@ -78,7 +77,16 @@ class AdminCategoryController extends BaseController
 
     public function admin_category_delete($id)
     {
+        $productData = $this->productModel->where('category_id', $id)->first();
+        $category = $this->categoryModel->where('id', $id)->first();
+        if ($productData) {
+            session()->setFlashdata('msg_status', 'warning');
+            session()->setFlashdata('msg', "Kategori $category->name tidak bisa dihapus karena sudah terpakai!");
+            return redirect()->to(base_url('eshop-admin/categories'));
+        }
         $this->categoryModel->delete($id);
+        session()->setFlashdata('msg_status', 'success');
+        session()->setFlashdata('msg', "Kategori $category->name berhasil dihapus!");
         return redirect()->to(base_url('eshop-admin/categories'));
     }
 }
