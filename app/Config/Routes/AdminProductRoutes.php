@@ -19,7 +19,7 @@ $routes->get('eshop-admin/product-images/(:num)/delete/(:num)', 'AdminProductCon
 
 //Product Varian
 $routes->get('eshop-admin/product/variants/(:num)', 'AdminProductController::admin_product_variants/$1');
-$routes->post('eshop-admin/product/variants/add_process', 'AdminProductController::admin_product_variants_add_process/$1');
+$routes->post('eshop-admin/product/variants/add_process', 'AdminProductController::admin_product_variants_add_process');
 $routes->post('eshop-admin/product/variants/view_edit', 'AdminProductController::admin_product_variants_edit');
 $routes->post('eshop-admin/product/variants/edit_process', 'AdminProductController::admin_product_variants_edit_process');
 $routes->get('eshop-admin/product/variants/delete/(:num)/(:num)', 'AdminProductController::admin_product_variants_delete/$1/$2');

@@ -42,7 +42,7 @@ class AdminController extends BaseController
     public function process_login()
     {
         $username = $this->request->getPost("username");
-        $password = $this->request->getPost("password") || null;
+        $password = $this->request->getPost("password");
 
         $admin = $this->adminModel
             ->where("username", $username)

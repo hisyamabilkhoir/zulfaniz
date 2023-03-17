@@ -5,17 +5,32 @@ namespace App\Controllers;
 class CustomerController extends BaseController
 {
     private $customerModel;
+    private $productModel;
+    private $productImageModel;
+    private $productVariantModel;
 
     public function __construct()
     {
         helper("form");
+        $this->db      = \Config\Database::connect();
         $this->customerModel = new \App\Models\CustomerModel();
+        $this->productModel = new \App\Models\ProductModel();
+        $this->productImageModel = new \App\Models\ProductImageModel();
+        $this->productVariantModel = new \App\Models\ProductVariantModel();
     }
 
     public function home()
     {
         // echo "test";
-        return view('customer/home');
+        $data = [
+            'products' => $this->productModel->findAll(5),
+            'db' => $this->db,
+        ];
+
+        // dd($data['products']);
+
+        // dd($data['products']);
+        return view('customer/home', $data);
     }
 
     public function login()
@@ -230,9 +245,18 @@ class CustomerController extends BaseController
         return view('customer/product');
     }
 
-    public function product_detail()
+    public function product_detail($slug)
     {
-        return view('customer/product_detail');
+        $product = $this->productModel->where('slug', $slug)->first();
+
+        $data = [
+            'db'    => $this->db,
+            'products_mores' => $this->productModel->where('id !=', $product->id)->findAll(4),
+            'product' => $product,
+            'product_images' => $this->productImageModel->where('product_id', $product->id)->findAll(),
+            'product_variants' => $this->productVariantModel->where('product_id', $product->id)->findAll(),
+        ];
+        return view('customer/product_detail', $data);
     }
 
     public function contact()

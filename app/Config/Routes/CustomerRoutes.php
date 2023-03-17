@@ -3,7 +3,7 @@
 //sebelum login
 $routes->get('/', 'CustomerController::home');
 $routes->get('/products', 'CustomerController::products');
-$routes->get('/product/detail', 'CustomerController::product_detail');
+$routes->get('/product/detail/(:any)', 'CustomerController::product_detail/$1');
 $routes->get('/contact', 'CustomerController::contact');
 $routes->get('/eshop-customer', 'CustomerController::login');
 $routes->post('/eshop-customer/process-login', 'CustomerController::process_login');

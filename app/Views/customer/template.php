@@ -45,7 +45,7 @@
 
     <style>
         .hero-slider .single-slider {
-            background-image: url('<?= base_url('banner/1.png') ?>');
+            background-image: url('<?= base_url('banner/zulfaniz-bg-banner.png') ?>');
             image-orientation: none;
         }
     </style>
