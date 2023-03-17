@@ -1,1 +1,1 @@
-__ci_last_regenerate|i:1678442819;_ci_previous_url|s:53:"http://localhost:8080/eshop-admin/product/variants/22";admin_id|s:1:"2";logged_in_admin|b:1;msg_status|s:7:"success";__ci_vars|a:2:{s:10:"msg_status";s:3:"old";s:3:"msg";s:3:"old";}msg|s:33:"Produk varian S berhasil dihapus!";
+__ci_last_regenerate|i:1678442819;_ci_previous_url|s:44:"http://localhost:8080/eshop-admin/categories";admin_id|s:1:"2";logged_in_admin|b:1;msg_status|s:7:"warning";__ci_vars|a:2:{s:10:"msg_status";s:3:"old";s:3:"msg";s:3:"old";}msg|s:34:"Nama kategori produk asd sudah ada";
