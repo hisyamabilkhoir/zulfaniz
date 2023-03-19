@@ -11,7 +11,7 @@
     <!-- Title Tag  -->
     <title><?= config("App")->appName ?> | <?= config("App")->companyName ?></title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="<?= base_url('/template_customer') ?>/images/favicon.png">
+    <link rel="icon" type="image/png" href="<?= base_url('/template_customer') ?>/images/logo-icon-zulfaniz.png">
     <!-- Web Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
@@ -74,14 +74,14 @@
                     <div class="col-lg-3 col-md-3 col-12">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="<?= base_url('/template_customer') ?>/images/zulfaniz-logo-header.jpg" alt="logo"></a>
+                            <a href="<?= base_url('/') ?>"><img src="<?= base_url('/template_customer') ?>/images/zulfaniz-logo-header.jpg" alt="logo"></a>
                         </div>
                         <!--/ End Logo -->
                         <!-- Search Form -->
                         <div class="search-top">
                             <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
                             <!-- Search Form -->
-                            <div class="search-top">
+                            <div class="search-top" method="post" action="<?= base_url('products/search') ?>">
                                 <form class="search-form">
                                     <input type="text" placeholder="Cari Produk..." name="search">
                                     <button value="search" type="submit"><i class="ti-search"></i></button>
@@ -96,9 +96,9 @@
                         <div class="search-bar-top">
                             <div class="search-bar">
                                 <!-- search -->
-                                <form>
-                                    <input name="search" placeholder="Cari Produk Disini....." type="search">
-                                    <button class="btnn"><i class="ti-search"></i></button>
+                                <form method="post" action="<?= base_url('products/search') ?>">
+                                    <input name="search" placeholder="Cari Nama Produk Disini....." type="search">
+                                    <button type="submit" class="btnn"><i class="ti-search"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -109,6 +109,11 @@
                             <div class="sinlge-bar">
                                 <?php
                                 if (session()->get('customer_id')) {
+                                    $this->cartModel = new \App\Models\CartModel();
+
+                                    $cart = $this->cartModel->where('customer_id', session()->get('customer_id'))->findAll();
+
+                                    $itemCart = count($cart);
                                     $url_profile = 'eshop-customer/profile';
                                     $url_cart = 'eshop-customer/cart';
                                     $text = config("LoginCustomer")->customerName;
@@ -116,12 +121,13 @@
                                     $url_profile = 'eshop-customer';
                                     $url_cart = 'eshop-customer';
                                     $text = 'Masuk';
+                                    $itemCart = '0';
                                 }
                                 ?>
                                 <a href="<?= base_url($url_profile); ?>" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"><small style="margin-left: 5px;"><?= $text; ?></small></i></a>
                             </div>
                             <div class="sinlge-bar shopping">
-                                <a href="<?= base_url($url_cart); ?>" class="single-icon"><i class="ti-bag"></i> <span class="total-count">0</span></a>
+                                <a href="<?= base_url($url_cart); ?>" class="single-icon"><i class="ti-bag"></i> <span class="total-count"><?= $itemCart; ?></span></a>
 
                             </div>
                         </div>
@@ -155,7 +161,7 @@
                                                             <li><a href="<?= base_url('/eshop-customer/order-histories') ?>">Riwayat Pesanan</a></li>
                                                             <li><a href="<?= base_url('/eshop-customer/profile') ?>">Profile</a></li>
                                                             <li><a href="<?= base_url('/eshop-customer/cart') ?>">Keranjang</a></li>
-                                                            <li><a href="<?= base_url('/eshop-customer/checkout') ?>">Keranjang</a></li>
+                                                            <li><a href="<?= base_url('/eshop-customer/checkout') ?>">Checkout</a></li>
                                                             <li><a href="<?= base_url('/eshop-customer/logout') ?>">Keluar</a></li>
                                                         </ul>
                                                     </li>
@@ -188,7 +194,7 @@
                         <!-- Single Widget -->
                         <div class="single-footer about">
                             <div class="logo">
-                                <a href="index.html"><img src="<?= base_url('/template_customer') ?>/images/zulfaniz-logo-footer.png" alt="#"></a>
+                                <a href="<?= base_url('/') ?>"><img src="<?= base_url('/template_customer') ?>/images/zulfaniz-logo-footer.png" alt="#"></a>
                             </div>
                             <p class="text">Kini menghadirkan beragam kebutuhan fashion muslimah mulai dari anak-anak hingga dewasa dari berbagai macam jenis seperti kain, hijab, busana yang lengkap akan pilihan</p>
                             <p class="call">Punya Pertanyaan? Hubungi !<span><a href="tel:123456789">+62 859 7372 9267</a></span></p>
@@ -202,7 +208,6 @@
                             <ul>
                                 <li><a href="<?= base_url('/') ?>">Beranda</a></li>
                                 <li><a href="<?= base_url('products') ?>">Produk</a></li>
-                                <li><a href="<?= base_url('contact') ?>">Hubungi Kami</a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -212,10 +217,7 @@
                         <div class="single-footer links">
                             <h4>Customer Service</h4>
                             <ul>
-                                <li><a href="#">Cara Pembayaran</a></li>
-                                <li><a href="#">Garansi</a></li>
-                                <li><a href="#">Lacak Paket</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="<?= base_url('contact') ?>">Hubungi Kami</a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -236,10 +238,9 @@
                             </div>
                             <!-- End Single Widget -->
                             <ul>
-                                <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                <li><a href="#"><i class="ti-twitter"></i></a></li>
-                                <li><a href="#"><i class="ti-flickr"></i></a></li>
-                                <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                <li><a href="https://id-id.facebook.com/"><i class="ti-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/?lang=id"><i class="ti-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/?hl=id"><i class="ti-instagram"></i></a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -301,6 +302,8 @@
     <script src="<?= base_url('/template_customer') ?>/js/easing.js"></script>
     <!-- Active JS -->
     <script src="<?= base_url('/template_customer') ?>/js/active.js"></script>
+
+    <?= $this->renderSection("page_script") ?>
 </body>
 
 </html>

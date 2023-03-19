@@ -817,7 +817,7 @@ Version:1.0
 .header.shop .search-bar form {
 	display: inline-block;
 	float: left;
-	width: 260px;
+	width: 90%;
 }
 
 .header.shop .search-bar input {
@@ -829,7 +829,7 @@ Version:1.0
 	font-size: 14px;
 	font-weight: 400;
 	padding: 0 25px 0 20px;
-	width: 328px;
+	width: 100%;
 }
 
 .header.shop .search-bar .btnn {

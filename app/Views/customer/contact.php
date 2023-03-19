@@ -5,42 +5,52 @@
     <div class="container">
         <div class="contact-head">
             <div class="row">
+                <div class="col-12">
+                    <?php if (session('msg_status')) : ?>
+                        <div class="alert mt-5 alert-<?= session('msg_status') ?> alert-dismissible fade show" role="alert">
+                            <?= session('msg'); ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
+                </div>
                 <div class="col-lg-8 col-12">
                     <div class="form-main">
                         <div class="title">
                             <h4>Hubungi Kami !</h4>
                             <h3>Tuliskan Pesan Kamu</h3>
                         </div>
-                        <form class="form" method="post" action="mail/mail.php">
+                        <form class="form" method="post" action="<?= base_url('contact/send') ?>">
                             <div class="row">
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group">
                                         <label>Nama<span>*</span></label>
-                                        <input name="name" type="text" placeholder="">
+                                        <input name="name" type="text" required placeholder="Masukan nama . . .">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group">
                                         <label>Subjek<span>*</span></label>
-                                        <input name="subject" type="text" placeholder="">
+                                        <input name="subject" type="text" required placeholder="Masukan subjek . . .">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group">
                                         <label>Email<span>*</span></label>
-                                        <input name="email" type="email" placeholder="">
+                                        <input name="email" type="email" required placeholder="Masukan email . . .">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group">
                                         <label>No. Handphone<span>*</span></label>
-                                        <input name="company_name" type="text" placeholder="">
+                                        <input name="phone" type="text" required placeholder="Masukan nomor handphone . . .">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group message">
                                         <label>Pesan<span>*</span></label>
-                                        <textarea name="message" placeholder=""></textarea>
+                                        <textarea name="message" required placeholder="Masukan pesan . . ."></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
