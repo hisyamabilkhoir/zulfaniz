@@ -1825,7 +1825,15 @@ Version:1.0
 .small-banner .single-banner .content {
 	position: absolute;
 	left: 0;
-	top: 50%;
+	top: 10%;
+	transform: translateY(-50%);
+	padding-left: 35px;
+}
+
+.small-banner .single-banner .content2 {
+	position: absolute;
+	left: 0;
+	top: 80%;
 	transform: translateY(-50%);
 	padding-left: 35px;
 }

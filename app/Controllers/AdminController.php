@@ -33,7 +33,10 @@ class AdminController extends BaseController
 
     public function login()
     {
-        return view('admin/login');
+        $data = [
+            'title' => 'Halaman Login'
+        ];
+        return view('admin/login', $data);
     }
 
     public function process_login()

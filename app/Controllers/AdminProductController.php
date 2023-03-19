@@ -241,19 +241,10 @@ class AdminProductController extends BaseController
         return view('admin/admin_product_variants', $data);
     }
 
-    public function admin_product_variants_add_process($productId)
+    public function admin_product_variants_add_process()
     {
-        if (!$this->validate([
-            'size'      => [
-                'rules' => 'is_unique[product_variants.size]',
-                'errors' => [
-                    'is_unique' => 'Nama kategori produk sudah ada',
-                ],
-            ],
-        ])) {
-            $validation = \Config\Services::validation();
-            return redirect()->to(base_url("/eshop-admin/product/variants/$productId"))->withInput()->with('validation', $validation);
-        }
+        $productId = $this->request->getPost('productId');
+
 
         $size = $this->request->getPost("size");
         $price = $this->request->getPost("price");
@@ -261,7 +252,12 @@ class AdminProductController extends BaseController
         $discount = $this->request->getPost("discount");
         $stock = $this->request->getPost("stock");
         $productId = $this->request->getPost("productId");
-
+        $dataSizeSama = $this->productVariantModel->where(['size' => $size, 'product_id' => $productId])->first();
+        if ($dataSizeSama) {
+            session()->setFlashdata('msg_status', 'warning');
+            session()->setFlashdata('msg', "Ukuran produk $size sudah ada");
+            return redirect()->to("/eshop-admin/product/variants/$productId");
+        }
         $this->productVariantModel->insert([
             "size"          => $size,
             "price"          => $price,
@@ -271,8 +267,8 @@ class AdminProductController extends BaseController
             "product_id"          => $productId,
         ]);
         // dd()
-        session()->setFlashdata('notif_status', 'success');
-        session()->setFlashdata('notif_content', "Produk varian $size berhasil ditambahkan!");
+        session()->setFlashdata('msg_status', 'success');
+        session()->setFlashdata('msg', "Produk varian $size berhasil ditambahkan!");
         return redirect()->to(base_url("/eshop-admin/product/variants/$productId"));
     }
 
@@ -297,7 +293,7 @@ class AdminProductController extends BaseController
         $stock = $this->request->getPost('stock');
         $stock_in = $this->request->getPost('stock_in');
         $stock_out = $this->request->getPost('stock_out');
-        $dataSizeSama = $this->productVariantModel->where(['size' => $size, 'id !=' => $product_variant_id])->first();
+        $dataSizeSama = $this->productVariantModel->where(['size' => $size, 'id !=' => $product_variant_id, 'product_id' => $product_id])->first();
         if ($dataSizeSama) {
             session()->setFlashdata('msg_status', 'warning');
             session()->setFlashdata('msg', "Ukuran produk $size sudah ada");
@@ -318,9 +314,13 @@ class AdminProductController extends BaseController
                 "discount" => $discount,
                 "stock" => $stock,
             ])->update();
+        $this->cartModel->where("product_variant_id", $product_variant_id)
+            ->set([
+                "price" => $price - ($price * $discount / 100),
+            ])->update();
 
-        session()->setFlashdata('notif_status', 'success');
-        session()->setFlashdata('notif_content', "Kategori $size berhasil disimpan!");
+        session()->setFlashdata('msg_status', 'success');
+        session()->setFlashdata('msg', "Kategori $size berhasil disimpan!");
         return redirect()->to(base_url("/eshop-admin/product/variants/$product_id"));
     }
 
