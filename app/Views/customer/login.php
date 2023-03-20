@@ -5,7 +5,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-1">
-                <h2 class="heading-section" style="font-weight: bold; font-size: 24px; margin-bottom: 40px;"><?= config("App")->appName ?> - <?= config("App")->companyName ?></h2>
+                <a href="<?= base_url('/') ?>">
+                    <h2 class="heading-section" style="font-weight: bold; font-size: 24px; margin-bottom: 40px;"><?= config("App")->appName ?> - <?= config("App")->companyName ?></h2>
+                </a>
             </div>
         </div>
         <div class="row justify-content-center">

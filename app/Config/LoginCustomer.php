@@ -25,6 +25,7 @@ class LoginCustomer extends BaseConfig
             $this->customerEmail = $customer->email;
             $this->customerPhone = $customer->phone;
             $this->customerAddress = $customer->address;
+            $this->customerImage = $customer->image;
         }
     }
 }

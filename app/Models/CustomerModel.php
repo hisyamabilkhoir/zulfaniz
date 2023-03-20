@@ -19,6 +19,7 @@ class CustomerModel extends Model
         'email',
         'phone',
         'address',
+        'image',
         'password',
     ];
 

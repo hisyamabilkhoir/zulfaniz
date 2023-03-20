@@ -10,8 +10,8 @@ class App extends BaseConfig
     public $appName = "Online Shop";
 
     public $companyName = "Zulfaniz";
-    private $urlRajaOngkir = "https://api.rajaongkir.com/starter/";
-    private $apiKey = "55c5827b7fb974766eaaf367c9f19d35";
+    public $urlRajaOngkir = "https://api.rajaongkir.com/starter/";
+    public $apiKey = "55c5827b7fb974766eaaf367c9f19d35";
     /**
      * --------------------------------------------------------------------------
      * Base Site URL
