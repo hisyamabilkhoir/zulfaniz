@@ -22,6 +22,7 @@ class InvoiceModel extends Model
         'cost_courier',
         'weight',
         'name',
+        'order_date',
         'phone',
         'province',
         'city',

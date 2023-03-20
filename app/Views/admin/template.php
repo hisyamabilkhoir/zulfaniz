@@ -156,8 +156,8 @@
                             </span>
                             <h4 class="text-section">Navigasi Pengguna</h4>
                         </li>
-                        <li class="nav-item <?= ($uri->getSegment(2) === "user-accounts") ? "active" : "" ?>">
-                            <a href="<?= base_url('eshop-admin/user-accounts') ?>">
+                        <li class="nav-item <?= ($uri->getSegment(2) === "customer-accounts") ? "active" : "" ?>">
+                            <a href="<?= base_url('eshop-admin/customer-accounts') ?>">
                                 <i class="fas fa-users"></i>
                                 <p>Akun Pelanggan</p>
                             </a>

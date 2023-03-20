@@ -3,7 +3,7 @@
 <?= $this->section("page_content") ?>
 <section class="shop checkout section">
     <div class="container">
-        <form class="form" method="post" action="#">
+        <form class="form" method="post" action="<?= base_url('/eshop-customer/checkout/process') ?>">
             <div class="row">
                 <div class="col-lg-8 col-12">
                     <div class="checkout-form">
@@ -28,7 +28,7 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>No. Handphone<span>*</span></label>
-                                    <input type="number" name="number" placeholder="" required="required">
+                                    <input type="number" name="phone" placeholder="" required="required">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
