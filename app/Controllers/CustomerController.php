@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use Midtrans\Snap;
+
 class CustomerController extends BaseController
 {
     private $customerModel;
@@ -11,6 +13,8 @@ class CustomerController extends BaseController
     private $cartModel;
     private $categoryModel;
     private $messageModel;
+    private $invoiceModel;
+    private $orderModel;
 
     public function __construct()
     {
@@ -23,6 +27,8 @@ class CustomerController extends BaseController
         $this->cartModel = new \App\Models\CartModel();
         $this->categoryModel = new \App\Models\CategoryModel();
         $this->messageModel = new \App\Models\MessageModel();
+        $this->invoiceModel = new \App\Models\InvoiceModel();
+        $this->orderModel = new \App\Models\OrderModel();
     }
 
     public function home()
@@ -470,12 +476,250 @@ class CustomerController extends BaseController
 
     public function checkout()
     {
-        return view('customer/checkout');
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "http://api.rajaongkir.com/starter/province",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "key: " . config("App")->apiKey
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+        $carts = $this->cartModel->where('customer_id', session()->get('customer_id'))->findAll();
+        $grandTotal = 0;
+        $weightTotal = 0;
+        foreach ($carts as $key => $value) {
+            $grandTotal += $value->price * $value->quantity;
+            $weightTotal += $value->weight * $value->quantity;
+        }
+        $data = [
+            'provinces' => json_decode($response, true)['rajaongkir']['results'],
+            'grandTotal' => $grandTotal,
+            'weightTotal' => $weightTotal,
+        ];
+        return view('customer/checkout', $data);
+    }
+
+    public function get_cities()
+    {
+        $provinceId = $this->request->getPost('provinceId');
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "http://api.rajaongkir.com/starter/city?province=$provinceId",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "key: " . config("App")->apiKey
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+        $data = [
+            'cities' => json_decode($response, true)['rajaongkir']['results'],
+        ];
+        // dd($data);
+        return view('customer/ajax/view_option_cities', $data);
+    }
+
+    public function get_costs()
+    {
+        $cityId = $this->request->getPost('cityId');
+        $weight = $this->request->getPost('weight');
+        $courier = $this->request->getPost('courier');
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "http://api.rajaongkir.com/starter/cost",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "origin=109&destination=$cityId&weight=$weight&courier=$courier",
+            CURLOPT_HTTPHEADER => array(
+                "content-type: application/x-www-form-urlencoded",
+                "key: " . config("App")->apiKey
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+        $data = [
+            'costs' => json_decode($response, true)['rajaongkir']['results'][0]['costs'],
+        ];
+        // dd(json_decode($response, true)['rajaongkir']['results'][0]['costs']);
+        return view('customer/ajax/view_option_service_courier', $data);
     }
 
     public function logout()
     {
         session()->destroy();
         return redirect()->to(base_url("/"));
+    }
+    public function process_checkout()
+    {
+        $weight = $this->request->getPost('weight');
+        $grand_total = $this->request->getPost('grand_total');
+        $name = $this->request->getPost('name');
+        $email = $this->request->getPost('email');
+        $phone = $this->request->getPost('phone');
+        $province = $this->request->getPost('province');
+        $city = $this->request->getPost('city');
+        $courier = $this->request->getPost('courier');
+        $cost = $this->request->getPost('cost');
+        $service = $this->request->getPost('service');
+        $address = $this->request->getPost('address');
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "http://api.rajaongkir.com/starter/city?id=$city&province=$province",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "key: " . config("App")->apiKey
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+        $type = json_decode($response, true)['rajaongkir']['results']['type'];
+        $city =  $type . ' ' . json_decode($response, true)['rajaongkir']['results']['city_name'];
+        $province = json_decode($response, true)['rajaongkir']['results']['province'];
+        $length = 10;
+        $random = '';
+        for ($i = 0; $i < $length; $i++) {
+            $random .= rand(0, 1) ? rand(0, 9) : chr(rand(ord('a'), ord('z')));
+            helper('text');
+        }
+
+        $no_invoice = 'INV - ' . strtoupper(random_string('alnum', 10));
+
+        $invoice = $this->invoiceModel->insert([
+            'invoice'       => $no_invoice,
+            'customer_id'          => session()->get('customer_id'),
+            'courier'          => $courier,
+            'service'          => $service,
+            'cost_courier'          => $cost,
+            'weight'          => $weight,
+            'name'          => $name,
+            'order_date'          => date('y-m-d'),
+            'phone'         => $phone,
+            'province'         => $province,
+            'city'         => $city,
+            'address'       => $address,
+            'status'        => 'pending',
+            'grand_total'   => $grand_total + $cost,
+        ]);
+        $invoice = $this->invoiceModel->where('id', $invoice)->first();
+        $carts = $this->cartModel
+            ->select([
+                'carts.product_id',
+                'carts.product_variant_id',
+                'carts.quantity',
+                'carts.price',
+                'products.title',
+                'product_variants.size',
+            ])
+            ->join('products', 'carts.product_id = products.id')
+            ->join('product_variants', 'carts.product_variant_id = product_variants.id')
+            ->where('carts.customer_id', session()->get('customer_id'))
+            ->findAll();
+        foreach ($carts as $cart) {
+            //insert product ke table order
+            $this->orderModel->insert([
+                'invoice_id'    => $invoice->id,
+                'product_id'    => $cart->product_id,
+                'product_variant_id'    => $cart->product_variant_id,
+                'product_name'  => $cart->title,
+                'variant_name'  => $cart->size,
+                'qty'           => $cart->quantity,
+                'price'         => $cart->price,
+            ]);
+        }
+        $payload = [
+            'transaction_details' => [
+                'order_id'      => $invoice->invoice,
+                'gross_amount'  => $grand_total + $cost,
+            ],
+            'customer_details' => [
+                'first_name'       => $name,
+                'email'            => $email,
+                'phone'            => $phone,
+                'shipping_address' => $address
+            ],
+            "cstore" => [
+                "alfamart_free_text_1" => "qwerty",
+                "alfamart_free_text_2" => "asdfg",
+                "alfamart_free_text_3" => "zxcvb"
+            ],
+            "shopeepay" => [
+                "callback_url" => "http://shopeepay.com?order_id=" . $invoice->invoice,
+            ]
+        ];
+
+        //create snap token
+        $snapToken = Snap::getSnapToken($payload);
+        $this->invoiceModel->update($invoice->id, ['snap_token' => $snapToken]);
+        $this->cartModel->where('customer_id', session()->get('customer_id'))->delete();
+
+        return redirect()->to("/eshop-customer/order-history/$snapToken");
+    }
+
+    public function order_histories()
+    {
+        $data = [
+            'invoices' => $this->invoiceModel->orderBy('invoice', 'asc')->findAll(),
+        ];
+        return view('customer/order_histories', $data);
+    }
+
+    public function order_history($snapToken)
+    {
+        $invoice = $this->invoiceModel->where('snap_token', $snapToken)->first();
+        $productsId = $this->orderModel->where('invoice_id', $invoice->id)->findColumn('product_id');
+        $products = $this->orderModel->where('invoice_id', $invoice->id)->whereIn('product_id', $productsId)->get()->getResultObject();
+        $productImages = $this->productImageModel->whereIn('product_id', $productsId)->get()->getResultObject();
+        foreach ($products as $key => $value) {
+            $i = 0;
+            while ($i < count($productImages)) {
+                if ($productImages[$i]->product_id == $value->product_id) {
+                    $value->product_images[$i] = $productImages[$i]->product_image;
+                }
+                $i++;
+            }
+        }
+        $data = [
+            'invoice' => $this->invoiceModel->where('snap_token', $snapToken)->first(),
+            'products' => $products,
+        ];
+        // dd($data);
+        return view('customer/order_detail', $data);
     }
 }

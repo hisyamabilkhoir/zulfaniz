@@ -123,6 +123,12 @@
                             </span>
                             <h4 class="text-section">Navigasi</h4>
                         </li>
+                        <li class="nav-item <?= ($uri->getSegment(2) === "orders") ? "active" : "" ?>">
+                            <a href="<?= base_url('eshop-admin/orders') ?>">
+                                <i class="fas fa-cart-arrow-down"></i>
+                                <p>Pembelian</p>
+                            </a>
+                        </li>
                         <li class="nav-item <?= ($uri->getSegment(2) === "products" || $uri->getSegment(2) === "product-stock" || $uri->getSegment(2) === "warehouses" || $uri->getSegment(2) === "warehouse_transfers") ? "active submenu" : "" ?>">
                             <a data-toggle="collapse" href="#nav-produk">
                                 <i class="fas fa-archive"></i>
@@ -141,21 +147,6 @@
                                             <span class="sub-item">Kategori</span>
                                         </a>
                                     </li>
-                                    <li class="<?= ($uri->getSegment(2) === "product-stock") ? "active" : "" ?>">
-                                        <a href="<?= base_url('product-stock'); ?>">
-                                            <span class="sub-item">Penyesuaian Stok</span>
-                                        </a>
-                                    </li>
-                                    <li class="<?= ($uri->getSegment(2) === "warehouses") ? "active" : "" ?>">
-                                        <a href="<?= base_url('warehouses'); ?>">
-                                            <span class="sub-item">Gudang</span>
-                                        </a>
-                                    </li>
-                                    <li class="<?= ($uri->getSegment(2) === "warehouse_transfers") ? "active" : "" ?>">
-                                        <a href="<?= base_url('warehouse_transfers'); ?>">
-                                            <span class="sub-item">Transfer Barang</span>
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -164,6 +155,12 @@
                                 <i class="fa fa-ellipsis-h"></i>
                             </span>
                             <h4 class="text-section">Navigasi Pengguna</h4>
+                        </li>
+                        <li class="nav-item <?= ($uri->getSegment(2) === "customer-accounts") ? "active" : "" ?>">
+                            <a href="<?= base_url('eshop-admin/customer-accounts') ?>">
+                                <i class="fas fa-users"></i>
+                                <p>Akun Pelanggan</p>
+                            </a>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(2) === "admin-accounts") ? "active" : "" ?>">
                             <a href="<?= base_url('eshop-admin/admin-accounts') ?>">

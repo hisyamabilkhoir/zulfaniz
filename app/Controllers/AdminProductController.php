@@ -293,7 +293,7 @@ class AdminProductController extends BaseController
         $stock = $this->request->getPost('stock');
         $stock_in = $this->request->getPost('stock_in');
         $stock_out = $this->request->getPost('stock_out');
-        $dataSizeSama = $this->productVariantModel->where(['size' => $size, 'id !=' => $product_variant_id])->first();
+        $dataSizeSama = $this->productVariantModel->where(['size' => $size, 'id !=' => $product_variant_id, 'product_id' => $product_id])->first();
         if ($dataSizeSama) {
             session()->setFlashdata('msg_status', 'warning');
             session()->setFlashdata('msg', "Ukuran produk $size sudah ada");
@@ -313,6 +313,10 @@ class AdminProductController extends BaseController
                 "weight" => $weight,
                 "discount" => $discount,
                 "stock" => $stock,
+            ])->update();
+        $this->cartModel->where("product_variant_id", $product_variant_id)
+            ->set([
+                "price" => $price - ($price * $discount / 100),
             ])->update();
 
         session()->setFlashdata('msg_status', 'success');
