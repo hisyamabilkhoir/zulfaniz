@@ -98,7 +98,7 @@ class AdminProductController extends BaseController
         }
         session()->setFlashdata('msg_status', 'success');
         session()->setFlashdata('msg', "Produk $name berhasil ditambahkan!");
-        return redirect()->to(base_url("eshop-admin/products"));
+        return redirect()->to(base_url("eshop-admin/product/variants/$id"));
     }
 
     public function admin_products_view_edit($id)
