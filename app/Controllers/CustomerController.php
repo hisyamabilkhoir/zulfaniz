@@ -700,6 +700,14 @@ class CustomerController extends BaseController
         return view('customer/order_histories', $data);
     }
 
+    public function order_update_status($snap_token, $status)
+    {
+        $this->invoiceModel->where('snap_token', $snap_token)->set([
+            'status' => $status,
+        ])->update();
+        return redirect()->to(base_url("/eshop-customer/order-history/$snap_token"));
+    }
+
     public function order_history($snapToken)
     {
         $invoice = $this->invoiceModel->where('snap_token', $snapToken)->first();

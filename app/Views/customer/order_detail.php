@@ -120,18 +120,16 @@
     function payment(snap_token) {
 
         window.snap.pay(snap_token, {
-
             onSuccess: function() {
-                window.location = `/eshop-customer/order-history/<?= $invoice->snap_token ?>`;
+                window.location = `/eshop-customer/order/<?= $invoice->snap_token ?>/status/success/update`;
             },
             onPending: function() {
-                window.location = `/eshop-customer/order-history/<?= $invoice->snap_token ?>`;
+                window.location = `/eshop-customer/order/<?= $invoice->snap_token ?>/status/pending/update`;
             },
             onError: function() {
-                window.location = `/eshop-customer/order-history/<?= $invoice->snap_token ?>`;
+                window.location = `/eshop-customer/order/<?= $invoice->snap_token ?>/status/error/update`;
             }
         })
-
     }
 </script>
 <?= $this->endSection() ?>
