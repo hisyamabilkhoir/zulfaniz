@@ -138,7 +138,7 @@
                                         <td><?= $product_variant->size ?></td>
                                         <td>Rp. <?= number_format($product_variant->price, 0, ",", "."); ?></td>
                                         <td><?= number_format($product_variant->weight, 0, ",", "."); ?></td>
-                                        <td><?= number_format($product_variant->discount, 0, ",", "."); ?></td>
+                                        <td><?= number_format($product_variant->discount, 0, ",", "."); ?> %</td>
                                         <td><?= number_format($product_variant->stock, 0, ",", "."); ?></td>
                                         <td class='text-center'>
                                             <button class="btn btn-success btn-sm text-white" onclick="editData(<?= $product_variant->id ?>, <?= $product_variant->product_id ?>)" data-toggle="modal" data-target="#modalEdit">
