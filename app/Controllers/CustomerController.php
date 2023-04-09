@@ -65,6 +65,7 @@ class CustomerController extends BaseController
             ->orWhere("email", $phone)
             ->first();
 
+        // dd($customer->password);
         // dd(password_verify($password, $customer->password));
 
         if ($customer) {
@@ -133,7 +134,7 @@ class CustomerController extends BaseController
         $email = $this->request->getPost("email");
         $phone = $this->request->getPost("phone");
         $address = $this->request->getPost("address");
-        $password = $this->request->getPost("password") || null;
+        $password = $this->request->getPost("password");
 
         $dataInsert = ([
             "name"                      => $name,
@@ -250,7 +251,7 @@ class CustomerController extends BaseController
     {
         $id = $this->request->getPost('id');
         $name = $this->request->getPost('name');
-        $password = $this->request->getPost('password') || null;
+        $password = $this->request->getPost('password');
 
         if (!$this->validate([
             'password'      => [
@@ -387,13 +388,15 @@ class CustomerController extends BaseController
             "email"                      => $email,
             "phone"                      => $phone,
             "message"                      => $message,
+            "date"                      => date('Y-m-d'),
+            "time"                      => date("H:i"),
             "status"                      => $status,
         ]);
 
         $this->messageModel->insert($dataInsert);
 
         session()->setFlashdata("msg_status", "success");
-        session()->setFlashdata("msg", "Pesan Terkirim ! Tunggu balasan pada email atau nomor handphone paling lambat 1 x 24 jam");
+        session()->setFlashdata("msg", "Pesan Terkirim ! Tunggu balasan pada email atau nomor whatsapp paling lambat 1 x 24 jam");
 
         return redirect()->back();
     }
@@ -411,9 +414,9 @@ class CustomerController extends BaseController
 
     public function add_to_cart()
     {
-        if (session()->get('customer_id') == null) {
-            return redirect('eshop-customer');
-        }
+        // if (session()->get('customer_id') == null) {
+        //     return redirect('eshop-customer');
+        // }
 
         $product_variant_id = $this->request->getPost('product_variant_id');
         $quantity = $this->request->getPost('quantity');

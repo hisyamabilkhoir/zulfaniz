@@ -43,8 +43,8 @@
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group">
-                                        <label>No. Handphone<span>*</span></label>
-                                        <input name="phone" type="text" required placeholder="Masukan nomor handphone . . .">
+                                        <label>No. WhatsApp<span>*</span></label>
+                                        <input name="phone" type="text" required placeholder="Masukan nomor whatsapp . . .">
                                     </div>
                                 </div>
                                 <div class="col-12">
