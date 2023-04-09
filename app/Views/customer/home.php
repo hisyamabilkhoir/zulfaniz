@@ -150,12 +150,12 @@
                 <div class="col-lg-6 col-12 padding-left">
                     <div class="content">
                         <div class="heading-block">
-                            <p class="small-title">Deal of day</p>
-                            <h3 class="title">Beatutyful dress for women</h3>
-                            <p class="text">Suspendisse massa leo, vestibulum cursus nulla sit amet, frungilla placerat lorem. Cars fermentum, sapien. </p>
-                            <h1 class="price">$1200 <s>$1890</s></h1>
+                            <p class="small-title">Kini Tersedia !</p>
+                            <h3 class="title">Kerudung Syar'i lengkap dengan cadar</h3>
+                            <p class="text">Kapan lagi mendapatkan produk dengan paket lengkap? tentunya harga murah dan barang berkualitas ! ayo sebelum kehabisan harga mulai dari :</p>
+                            <h1 class="price">Rp. 30.000<s>Rp. 100.000</s></h1>
                             <div class="coming-time">
-                                <div class="clearfix" data-countdown="2021/02/30"></div>
+                                <div class="clearfix" data-countdown="2023/04/30"></div>
                             </div>
                         </div>
                     </div>
@@ -180,11 +180,11 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <!-- Start Single Blog  -->
                 <div class="shop-single-blog">
-                    <img src="https://via.placeholder.com/370x300" alt="#">
+                    <img src="<?= base_url('template_customer/images/1.jpg') ?>" alt="#">
                     <div class="content">
-                        <p class="date">22 July , 2020. Monday</p>
-                        <p class="title">Nurlaela Saeputri</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, ea. Sint nulla officia quos quia a, illo quisquam voluptatibus laboriosam!</p>
+                        <p class="date">Senin, 13 April 2022</p>
+                        <p class="title">Inayah</p>
+                        <p>Ummi Alhamdulillah dress gamisnya sudh dipakai hari ini, MasyaaAllah bagus sekali, bahanya adem, nyaman dipakai, warnanya lembut bersinar. Suami suka banget ummi.</p>
                     </div>
                 </div>
                 <!-- End Single Blog  -->
@@ -192,11 +192,11 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <!-- Start Single Blog  -->
                 <div class="shop-single-blog">
-                    <img src="https://via.placeholder.com/370x300" alt="#">
+                    <img src="<?= base_url('template_customer/images/2.jpg') ?>" alt="#">
                     <div class="content">
-                        <p class="date">22 July, 2020. Monday</p>
-                        <p class="title">Nurlaela Saeputri</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, ea. Sint nulla officia quos quia a, illo quisquam voluptatibus laboriosam!</p>
+                        <p class="date">Kamis, 10 Agustus 2022</p>
+                        <p class="title">Mm Haikal</p>
+                        <p>MasyaaAllah karyanya mmh hisyam bagus bagus semua, model nya kekinian, aku suka banget !!</p>
                     </div>
                 </div>
                 <!-- End Single Blog  -->
@@ -204,11 +204,11 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <!-- Start Single Blog  -->
                 <div class="shop-single-blog">
-                    <img src="https://via.placeholder.com/370x300" alt="#">
+                    <img src="<?= base_url('template_customer/images/3.jpg') ?>" alt="#">
                     <div class="content">
-                        <p class="date">22 July, 2020. Monday</p>
-                        <p class="title">Nurlaela Saeputri</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, ea. Sint nulla officia quos quia a, illo quisquam voluptatibus laboriosam!</p>
+                        <p class="date">Selasa, 14 November 2022</p>
+                        <p class="title">Ummi Jihan</p>
+                        <p>Suka banget sama gamis gamis syar'i nya, warna beragam dan modelnya pun beragam, adem lembut, nyaman dipakai.</p>
                     </div>
                 </div>
                 <!-- End Single Blog  -->

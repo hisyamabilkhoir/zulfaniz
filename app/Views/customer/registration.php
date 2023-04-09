@@ -17,7 +17,7 @@
                         <div class="w-200 mb-5">
                             <h3 class="mb-4 text-center">Silahkan Registrasi</h3>
                         </div>
-                        <form action="<?= base_url('eshop-customer/process-registration') ?>" method="POST" class="signin-form">
+                        <form action="<?= base_url('/process-registration') ?>" method="POST" class="signin-form">
                             <div class="form-group">
                                 <input type="text" name="name" autofocus class="form-control mb-4 <?= (validation_show_error('name')) ? 'is-invalid' : ''; ?>" value="<?= (old('name')); ?>" required>
                                 <label class="form-control-placeholder" for="name">Nama</label>

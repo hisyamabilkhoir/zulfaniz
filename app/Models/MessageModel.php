@@ -20,6 +20,8 @@ class MessageModel extends Model
         'email',
         'phone',
         'message',
+        'date',
+        'time',
         'status',
     ];
 

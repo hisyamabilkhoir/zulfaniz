@@ -10,9 +10,19 @@ $routes->post('/product/detail/select-variant', 'CustomerController::product_det
 $routes->get('/contact', 'CustomerController::contact');
 $routes->post('/contact/send', 'CustomerController::contact_send');
 $routes->get('/eshop-customer', 'CustomerController::login');
-$routes->post('/eshop-customer/process-login', 'CustomerController::process_login');
-$routes->get('/eshop-customer/registration', 'CustomerController::registration');
-$routes->post('/eshop-customer/process-registration', 'CustomerController::process_registration');
+$routes->post('/process-login', 'CustomerController::process_login');
+$routes->get('/registration', 'CustomerController::registration');
+$routes->post('/process-registration', 'CustomerController::process_registration');
+
+
+if (session()->get('logged_in_customer') == null) {
+    $routes->get("eshop-customer/(:any)", "CustomerController::profile", ['filter' => 'login_customer']);
+}
+
+if (session()->get('logged_in_customer')) {
+    $routes->get("eshop-customer", "CustomerController::login", ['filter' => 'logout_customer']);
+}
+
 $routes->get('/eshop-customer/profile', 'CustomerController::profile');
 $routes->post('/eshop-customer/profile/set-photo', 'CustomerController::profile_set_photo');
 $routes->get('/eshop-customer/profile/edit', 'CustomerController::profile_edit');

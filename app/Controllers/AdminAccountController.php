@@ -88,7 +88,7 @@ class AdminAccountController extends BaseController
         $phone = $this->request->getPost("phone");
         $email = $this->request->getPost("email");
         $username = $this->request->getPost("username");
-        $password = $this->request->getPost("password") || null;
+        $password = $this->request->getPost("password");
 
         $dataInsert = ([
             "name"                      => $name,
@@ -194,7 +194,7 @@ class AdminAccountController extends BaseController
     {
         $id = $this->request->getPost('id');
         $name = $this->request->getPost('name');
-        $password = $this->request->getPost('password') || null;
+        $password = $this->request->getPost('password');
 
         if (!$this->validate([
             'password'      => [

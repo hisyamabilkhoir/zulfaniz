@@ -98,7 +98,7 @@ class CustomerAccountController extends BaseController
     {
         $id = $this->request->getPost('id');
         $name = $this->request->getPost('name');
-        $password = $this->request->getPost('password') || null;
+        $password = $this->request->getPost('password');
 
         if (!$this->validate([
             'password'      => [
