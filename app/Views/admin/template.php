@@ -123,13 +123,13 @@
                             </span>
                             <h4 class="text-section">Navigasi</h4>
                         </li>
-                        <li class="nav-item <?= ($uri->getSegment(2) === "orders") ? "active" : "" ?>">
+                        <li class="nav-item <?= ($uri->getSegment(2) === "orders" ? "active" : "" || $uri->getSegment(2) === "order") ? "active" : "" ?>">
                             <a href="<?= base_url('eshop-admin/orders') ?>">
                                 <i class="fas fa-cart-arrow-down"></i>
                                 <p>Pembelian</p>
                             </a>
                         </li>
-                        <li class="nav-item <?= ($uri->getSegment(2) === "products" || $uri->getSegment(2) === "product-stock" || $uri->getSegment(2) === "warehouses" || $uri->getSegment(2) === "warehouse_transfers") ? "active submenu" : "" ?>">
+                        <li class="nav-item <?= ($uri->getSegment(2) === "products" || $uri->getSegment(2) === "categories" || $uri->getSegment(2) === "product") ? "active submenu" : "" ?>">
                             <a data-toggle="collapse" href="#nav-produk">
                                 <i class="fas fa-archive"></i>
                                 <p>Produk</p>

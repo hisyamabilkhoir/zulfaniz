@@ -58,12 +58,14 @@ class CustomerController extends BaseController
     public function process_login()
     {
         $phone = $this->request->getPost("phone");
-        $password = $this->request->getPost("password") || null;
+        $password = $this->request->getPost("password");
 
         $customer = $this->customerModel
             ->where("phone", $phone)
             ->orWhere("email", $phone)
             ->first();
+
+        // dd(password_verify($password, $customer->password));
 
         if ($customer) {
             if (password_verify($password, $customer->password)) {
@@ -124,7 +126,7 @@ class CustomerController extends BaseController
             ]
         ])) {
             $validation = \Config\Services::validation();
-            return redirect()->to(base_url('eshop-customer/registration'))->withInput()->with('validation', $validation);
+            return redirect()->to(base_url('/registration'))->withInput()->with('validation', $validation);
         }
 
         $name = $this->request->getPost("name");
@@ -698,6 +700,14 @@ class CustomerController extends BaseController
             'invoices' => $this->invoiceModel->orderBy('invoice', 'asc')->findAll(),
         ];
         return view('customer/order_histories', $data);
+    }
+
+    public function order_update_status($snap_token, $status)
+    {
+        $this->invoiceModel->where('snap_token', $snap_token)->set([
+            'status' => $status,
+        ])->update();
+        return redirect()->to(base_url("/eshop-customer/order-history/$snap_token"));
     }
 
     public function order_history($snapToken)

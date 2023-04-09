@@ -5,6 +5,7 @@ namespace App\Controllers;
 class AdminController extends BaseController
 {
     private $adminModel;
+    private $invoiceModel;
 
     public function __construct()
     {
@@ -14,6 +15,7 @@ class AdminController extends BaseController
 
         helper("form");
         $this->adminModel = new \App\Models\AdministratorModel();
+        $this->invoiceModel = new \App\Models\InvoiceModel();
     }
     public function create_admin()
     {
@@ -199,6 +201,21 @@ class AdminController extends BaseController
 
     public function dashboard()
     {
-        return view('admin/dashboard');
+        $start_date = date('Y-m') . '-01';
+        $end_date = date('Y-m') . '-31';
+        $start_month = date('Y') . '-01-01';
+        $end_month = date('Y') . '-12-31';
+
+        $totalCurrentMonth = $this->invoiceModel->selectSum('grand_total')->where("order_date BETWEEN '$start_date' AND '$end_date' ")->first();
+        $totalCurrentYear = $this->invoiceModel->selectSum('grand_total')->where("order_date BETWEEN '$start_month' AND '$end_month' ")->first();
+        $total = $this->invoiceModel->selectSum('grand_total')->first();
+        // $invoiceData->sum('')->where
+        $data = [
+            'totalCurrentMonth' => $totalCurrentMonth,
+            'totalCurrentYear' => $totalCurrentYear,
+            'total' => $total,
+            'invoices' => $this->invoiceModel->orderBy('order_date', 'asc')->limit(5)->findAll(),
+        ];
+        return view('admin/dashboard', $data);
     }
 }

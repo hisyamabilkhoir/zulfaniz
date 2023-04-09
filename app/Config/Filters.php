@@ -23,6 +23,8 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'logout_admin'     => \App\Filters\LogoutAdmin::class,
         'login_admin'     => \App\Filters\LoginAdmin::class,
+        'login_customer'     => \App\Filters\LoginCustomer::class,
+        'logout_customer'     => \App\Filters\LogoutCustomer::class,
     ];
 
     /**
