@@ -17,6 +17,7 @@ $routes->post('eshop-admin/profile/save', 'AdminController::save_profile');
 $routes->post('eshop-admin/profile/password/reset', 'AdminController::profile_reset_password');
 //menu
 $routes->get('eshop-admin/dashboard', 'AdminController::dashboard');
+$routes->get('eshop-admin/messages', 'AdminController::messages');
 
 
 
