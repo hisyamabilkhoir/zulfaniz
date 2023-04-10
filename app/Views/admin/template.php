@@ -150,11 +150,17 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item <?= ($uri->getSegment(2) === "messages") ? "active" : "" ?>">
+                            <a href="<?= base_url('eshop-admin/messages') ?>">
+                                <i class="fas fa-envelope"></i>
+                                <p>Pesan</p>
+                            </a>
+                        </li>
                         <li class="nav-section">
                             <span class="sidebar-mini-icon">
                                 <i class="fa fa-ellipsis-h"></i>
                             </span>
-                            <h4 class="text-section">Navigasi Pengguna</h4>
+                            <h4 class="text-section">Akun Pengguna</h4>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(2) === "customer-accounts") ? "active" : "" ?>">
                             <a href="<?= base_url('eshop-admin/customer-accounts') ?>">

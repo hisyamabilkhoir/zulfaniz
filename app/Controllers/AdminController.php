@@ -6,6 +6,7 @@ class AdminController extends BaseController
 {
     private $adminModel;
     private $invoiceModel;
+    private $messageModel;
 
     public function __construct()
     {
@@ -16,6 +17,7 @@ class AdminController extends BaseController
         helper("form");
         $this->adminModel = new \App\Models\AdministratorModel();
         $this->invoiceModel = new \App\Models\InvoiceModel();
+        $this->messageModel = new \App\Models\MessageModel();
     }
     public function create_admin()
     {
@@ -214,8 +216,16 @@ class AdminController extends BaseController
             'totalCurrentMonth' => $totalCurrentMonth,
             'totalCurrentYear' => $totalCurrentYear,
             'total' => $total,
-            'invoices' => $this->invoiceModel->orderBy('order_date', 'asc')->limit(5)->findAll(),
+            'invoices' => $this->invoiceModel->orderBy('order_date', 'desc')->findAll(5),
         ];
         return view('admin/dashboard', $data);
+    }
+
+    public function messages()
+    {
+        $data = [
+            'messages' => $this->messageModel->orderBy('date', 'desc')->orderBy('time', 'desc')->findAll(),
+        ];
+        return view('admin/messages', $data);
     }
 }
