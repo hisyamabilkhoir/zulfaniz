@@ -16,19 +16,19 @@
                             <div class="col-lg-12 col-md-12 col-12">
                                 <div class="form-group">
                                     <label>Nama Lengkap<span>*</span></label>
-                                    <input type="text" name="name" placeholder="" required="required">
+                                    <input type="text" name="name" placeholder="Nama" required="required">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>Email<span>*</span></label>
-                                    <input type="email" name="email" placeholder="" required="required">
+                                    <input type="email" name="email" placeholder="Email" required="required">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>No. Handphone<span>*</span></label>
-                                    <input type="number" name="phone" placeholder="" required="required">
+                                    <input type="number" name="phone" placeholder="No Handphone" required="required">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
@@ -57,7 +57,7 @@
                             <div class="col-lg-12 col-md-12 col-12">
                                 <div class="form-group">
                                     <label>Alamat<span>*</span></label>
-                                    <input type="text" name="address" placeholder="" required="required">
+                                    <textarea style="background-color: #f6f7fb; border: none;" name="address" placeholder="  Masukan alamat . . ." required></textarea>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                     <div class="order-details">
                         <!-- Order Widget -->
                         <div class="single-widget">
-                            <h2>CART TOTALS</h2>
+                            <h2>Total</h2>
                             <div class="content">
                                 <ul>
                                     <li>Sub Total<span>Rp. <?= number_format($grandTotal, 0, ",", "."); ?></span></li>
@@ -80,7 +80,7 @@
                         <div class="single-widget get-button">
                             <div class="content">
                                 <div class="button">
-                                    <button type="submit" class="btn">proceed to checkout</button>
+                                    <button type="submit" class="btn">Proses Checkout</button>
                                 </div>
                             </div>
                         </div>
