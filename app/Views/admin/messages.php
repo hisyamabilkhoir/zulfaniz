@@ -72,17 +72,23 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="detailMessage">Pesan</label>
-                            <textarea class="form-control" id="detailMessage" disabled></textarea>
+                            <textarea class="form-control" id="detailMessage" rows="10" disabled></textarea>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-                <div class="float-right">
-                    <button type="buttom" class="btn btn-light">Balas Menggunakan : </button>
-                    <button type="buttom" class="btn btn-success">WhatsApp</button>
-                    <button type="buttom" class="btn btn-warning">Gmail</button>
+                <div class="float-right d-inline">
+                    <button type="buttom" class="btn btn-light d-inline">Balas Menggunakan : </button>
+                    <form class="d-inline" action="<?= base_url('eshop-admin/message/whatsapp') ?>" method="post">
+                        <input type="hidden" name="id" id="detailID">
+                        <button type="submit" class="btn btn-success">WhatsApp</button>
+                    </form>
+                    <form class="d-inline" action="<?= base_url('eshop-admin/message/gmail') ?>" method="post">
+                        <input type="hidden" name="id" id="detailIDGmail">
+                        <button type="submit" class="btn btn-warning">Gmail</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -130,7 +136,7 @@
                                             <?php endif; ?>
                                         </td>
                                         <td class='text-center'>
-                                            <button onclick="detail('<?= $message->id ?>','<?= $message->name ?>', '<?= $message->subject ?>','<?= $message->email ?>','<?= $message->phone ?>','<?= trim(preg_replace('/\r?\n|\r/', '\n', $message->message)); ?>','<?= $message->date ?>','<?= $message->time ?>','<?= $message->status ?>')" title="Detail" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalDetail">
+                                            <button onclick="detail('<?= $message->id ?>','<?= $message->name ?>', '<?= $message->subject ?>','<?= $message->email ?>','<?= $message->phone ?>','<?= trim(preg_replace('/\r?\n|\r/', '\n', $message->message)); ?>','<?= date('d-m-Y', strtotime($message->date)) ?>','<?= $message->time ?>','<?= $message->status ?>')" title="Detail" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalDetail">
                                                 <i class="fa fa-info"></i>
                                             </button>
                                         </td>
@@ -152,6 +158,7 @@
 <script>
     function detail(id, name, subject, email, phone, message, date, time, status) {
         $("#detailID").val(id)
+        $("#detailIDGmail").val(id)
         $("#detailName").val(name)
         $("#detailSubject").val(subject)
         $("#detailEmail").val(email)

@@ -396,7 +396,7 @@ class CustomerController extends BaseController
         $this->messageModel->insert($dataInsert);
 
         session()->setFlashdata("msg_status", "success");
-        session()->setFlashdata("msg", "Pesan Terkirim ! Tunggu balasan pada email atau nomor whatsapp paling lambat 1 x 24 jam");
+        session()->setFlashdata("msg", "Pesan Terkirim ! Tunggu balasan pada email (spam) atau nomor whatsapp paling lambat 1 x 24 jam");
 
         return redirect()->back();
     }

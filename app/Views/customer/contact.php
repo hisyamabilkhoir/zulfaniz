@@ -45,6 +45,7 @@
                                     <div class="form-group">
                                         <label>No. WhatsApp<span>*</span></label>
                                         <input name="phone" type="text" required placeholder="Masukan nomor whatsapp . . .">
+                                        <span><small style="color: red;">Contoh : 6285973729267</small></span>
                                     </div>
                                 </div>
                                 <div class="col-12">

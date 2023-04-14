@@ -228,4 +228,81 @@ class AdminController extends BaseController
         ];
         return view('admin/messages', $data);
     }
+
+    public function message_whatsapp()
+    {
+        $id = $this->request->getPost('id');
+        $message = $this->messageModel->where('id', $id)->first();
+
+        $data = [
+            'message' => $message,
+        ];
+
+        return view('admin/message_whatsapp', $data);
+    }
+
+    public function message_whatsapp_reply()
+    {
+        $id = $this->request->getPost('id');
+        $reply_message = $this->request->getPost('reply_message');
+        $message = $this->messageModel->where('id', $id)->first();
+
+        // bagian reply message
+        $str     = $reply_message;
+        $order   = array("\r\n", "\n", "\r");
+        $replace = ' %20%0a';
+        $reply_message = str_replace($order, $replace, $str);
+
+        // bagian message database
+        $str_m     = $message->message;
+        $order_m   = array("\r\n", "\n", "\r");
+        $replace_m = ' %20%0a';
+        $db_message = str_replace($order_m, $replace_m, $str_m);
+
+        return redirect()->to('https://api.whatsapp.com/send?phone=' . $message->phone .
+            '&text=Subjek :%20' . $message->subject .
+            '%20%0aNama :%20' . $message->name .
+            '%20%0aEmail :%20' . $message->email .
+            '%20%0aNo. WhatsApp :%20' . $message->phone .
+            '%20%0aPesan :%20%0a' . $db_message .
+            '%20%0a' .
+            '%20%0a---- Balasan Pihak Kami ------' .
+            '%20%0a' .
+            '%20%0aPesan Balasan :%20%0a' . $reply_message);
+    }
+
+    public function message_whatsapp_reply_send($id)
+    {
+        $this->messageModel->update($id, ([
+            "status"  => 2
+        ]));
+
+        session()->setFlashdata('msg_status', 'success');
+        session()->setFlashdata('msg', 'Pesan berhasil dikirim !');
+        return redirect()->to(base_url('eshop-admin/messages'));
+    }
+
+    public function message_gmail()
+    {
+        $id = $this->request->getPost('id');
+
+        $message = $this->messageModel->where('id', $id)->first();
+
+        $data = [
+            'message' => $message,
+        ];
+
+        return view('admin/message_gmail', $data);
+    }
+
+    public function message_gmail_reply($id)
+    {
+        $this->messageModel->update($id, ([
+            "status"  => 2
+        ]));
+
+        session()->setFlashdata('msg_status', 'success');
+        session()->setFlashdata('msg', 'Pesan berhasil dikirim !');
+        return redirect()->to(base_url('eshop-admin/messages'));
+    }
 }

@@ -1,0 +1,404 @@
+INFO - 2023-04-10 10:27:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:27:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:27:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:27:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:28:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:36:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:53:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:53:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 10:53:47 --> Attempt to read property "name" on null
+in APPPATH\Views\admin\message_whatsapp.php on line 40.
+ 1 APPPATH\Views\admin\message_whatsapp.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on null', 'APPPATH\\Views\\admin\\message_whatsapp.php', 40)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\message_whatsapp.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('admin/message_whatsapp', [], true)
+ 5 APPPATH\Controllers\AdminController.php(241): view('admin/message_whatsapp', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdminController->message_whatsapp()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 10:54:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:54:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:54:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:55:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:55:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:55:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:55:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:56:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:56:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:56:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:56:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 10:56:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:00:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:00:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:01:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:01:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:02:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:02:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:03:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:03:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:03:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:03:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:04:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:08:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:12:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:18:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:20:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:24:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:25:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:27:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:27:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:30:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:31:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:32:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:33:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:33:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:34:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:34:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:35:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:35:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:54:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:54:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 11:55:14 --> The route for "https://api.whatsapp.com/send?phone=083874897599%20%0a---- Balasan Terhadap Pesan Anda ------&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20Woy
+woy 
+asdas
+asd
+asdasd" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('https://api.whatsapp.com/send?phone=083874897599%20%0a---- Balasan Terhadap Pesan Anda ------&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20Woy
+woy 
+asdas
+asd
+asdasd')
+ 2 SYSTEMPATH\Common.php(869): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\AdminController.php(264): redirect('https://api.whatsapp.com/send?phone=083874897599%20%0a---- Balasan Terhadap Pesan Anda ------&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20Woy
+woy 
+asdas
+asd
+asdasd')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdminController->message_whatsapp_reply()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 11:55:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:59:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 11:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 11:59:45 --> The route for "https://api.whatsapp.com/send?phone=083874897599%20%0a---- Balasan Terhadap Pesan Anda ------&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asda<br />
+asd<br />
+asd" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('https://api.whatsapp.com/send?phone=083874897599%20%0a---- Balasan Terhadap Pesan Anda ------&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asda<br />
+asd<br />
+asd')
+ 2 SYSTEMPATH\Common.php(869): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\AdminController.php(265): redirect('https://api.whatsapp.com/send?phone=083874897599%20%0a---- Balasan Terhadap Pesan Anda ------&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asda<br />
+asd<br />
+asd')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdminController->message_whatsapp_reply()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 11:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:00:49 --> The route for "https://api.whatsapp.com/send?phone=083874897599%20%0a---- Balasan Terhadap Pesan Anda ------&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20sss" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('https://api.whatsapp.com/send?phone=083874897599%20%0a---- Balasan Terhadap Pesan Anda ------&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20sss')
+ 2 SYSTEMPATH\Common.php(869): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\AdminController.php(265): redirect('https://api.whatsapp.com/send?phone=083874897599%20%0a---- Balasan Terhadap Pesan Anda ------&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20sss')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdminController->message_whatsapp_reply()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:02:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:02:59 --> The route for "https://api.whatsapp.com/send?phone=083874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asds" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('https://api.whatsapp.com/send?phone=083874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asds')
+ 2 SYSTEMPATH\Common.php(869): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\AdminController.php(265): redirect('https://api.whatsapp.com/send?phone=083874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%20083874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asds')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdminController->message_whatsapp_reply()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:03:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:06:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:06:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:06:33 --> The route for "https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asd" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asd')
+ 2 SYSTEMPATH\Common.php(869): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\AdminController.php(264): redirect('https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asd')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdminController->message_whatsapp_reply()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:06:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:07:09 --> The route for "https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asdasd" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asdasd')
+ 2 SYSTEMPATH\Common.php(869): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\AdminController.php(264): redirect('https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asdasd')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdminController->message_whatsapp_reply()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:07:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:07:36 --> The route for "https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20')
+ 2 SYSTEMPATH\Common.php(869): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\AdminController.php(264): redirect('https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdminController->message_whatsapp_reply()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:07:42 --> The route for "https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asdasd" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asdasd')
+ 2 SYSTEMPATH\Common.php(869): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\AdminController.php(264): redirect('https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20--%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asdasd')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AdminController->message_whatsapp_reply()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:07:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:08:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:09:51 --> Header may not contain more than a single header, new line detected
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 478.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Header may not contain more than a single header, new line detected', 'SYSTEMPATH\\HTTP\\ResponseTrait.php', 478)
+ 2 SYSTEMPATH\HTTP\ResponseTrait.php(478): header('Location: https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20coba<br />
+coba<br />
+coba<br />
+coba%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20test
+test
+test', false, 303)
+ 3 SYSTEMPATH\HTTP\ResponseTrait.php(448): CodeIgniter\HTTP\Response->sendHeaders()
+ 4 SYSTEMPATH\CodeIgniter.php(1123): CodeIgniter\HTTP\Response->send()
+ 5 SYSTEMPATH\CodeIgniter.php(554): CodeIgniter\CodeIgniter->sendResponse()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:10:16 --> Header may not contain more than a single header, new line detected
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 478.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Header may not contain more than a single header, new line detected', 'SYSTEMPATH\\HTTP\\ResponseTrait.php', 478)
+ 2 SYSTEMPATH\HTTP\ResponseTrait.php(478): header('Location: https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20coba<br />
+coba<br />
+coba<br />
+coba%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20test
+test
+test', false, 303)
+ 3 SYSTEMPATH\HTTP\ResponseTrait.php(448): CodeIgniter\HTTP\Response->sendHeaders()
+ 4 SYSTEMPATH\CodeIgniter.php(1123): CodeIgniter\HTTP\Response->send()
+ 5 SYSTEMPATH\CodeIgniter.php(554): CodeIgniter\CodeIgniter->sendResponse()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:10:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:11:09 --> Header may not contain more than a single header, new line detected
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 478.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Header may not contain more than a single header, new line detected', 'SYSTEMPATH\\HTTP\\ResponseTrait.php', 478)
+ 2 SYSTEMPATH\HTTP\ResponseTrait.php(478): header('Location: https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20coba<br />
+coba<br />
+coba<br />
+coba%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asdasd', false, 303)
+ 3 SYSTEMPATH\HTTP\ResponseTrait.php(448): CodeIgniter\HTTP\Response->sendHeaders()
+ 4 SYSTEMPATH\CodeIgniter.php(1123): CodeIgniter\HTTP\Response->send()
+ 5 SYSTEMPATH\CodeIgniter.php(554): CodeIgniter\CodeIgniter->sendResponse()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:11:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:11:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:11:18 --> Header may not contain more than a single header, new line detected
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 478.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Header may not contain more than a single header, new line detected', 'SYSTEMPATH\\HTTP\\ResponseTrait.php', 478)
+ 2 SYSTEMPATH\HTTP\ResponseTrait.php(478): header('Location: https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20coba<br />
+coba<br />
+coba<br />
+coba%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asd
+asd
+asd', false, 303)
+ 3 SYSTEMPATH\HTTP\ResponseTrait.php(448): CodeIgniter\HTTP\Response->sendHeaders()
+ 4 SYSTEMPATH\CodeIgniter.php(1123): CodeIgniter\HTTP\Response->send()
+ 5 SYSTEMPATH\CodeIgniter.php(554): CodeIgniter\CodeIgniter->sendResponse()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:11:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:12:35 --> Header may not contain more than a single header, new line detected
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 478.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Header may not contain more than a single header, new line detected', 'SYSTEMPATH\\HTTP\\ResponseTrait.php', 478)
+ 2 SYSTEMPATH\HTTP\ResponseTrait.php(478): header('Location: https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20coba
+coba
+coba
+coba%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20aasd
+asd
+asd', false, 303)
+ 3 SYSTEMPATH\HTTP\ResponseTrait.php(448): CodeIgniter\HTTP\Response->sendHeaders()
+ 4 SYSTEMPATH\CodeIgniter.php(1123): CodeIgniter\HTTP\Response->send()
+ 5 SYSTEMPATH\CodeIgniter.php(554): CodeIgniter\CodeIgniter->sendResponse()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:12:47 --> Header may not contain more than a single header, new line detected
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 478.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Header may not contain more than a single header, new line detected', 'SYSTEMPATH\\HTTP\\ResponseTrait.php', 478)
+ 2 SYSTEMPATH\HTTP\ResponseTrait.php(478): header('Location: https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20coba<br />
+coba<br />
+coba<br />
+coba%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asdsa<br />
+asd<br />
+asd', false, 303)
+ 3 SYSTEMPATH\HTTP\ResponseTrait.php(448): CodeIgniter\HTTP\Response->sendHeaders()
+ 4 SYSTEMPATH\CodeIgniter.php(1123): CodeIgniter\HTTP\Response->send()
+ 5 SYSTEMPATH\CodeIgniter.php(554): CodeIgniter\CodeIgniter->sendResponse()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:13:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:13:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:13:20 --> Header may not contain more than a single header, new line detected
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 478.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Header may not contain more than a single header, new line detected', 'SYSTEMPATH\\HTTP\\ResponseTrait.php', 478)
+ 2 SYSTEMPATH\HTTP\ResponseTrait.php(478): header('Location: https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20coba<br />
+coba<br />
+coba<br />
+coba%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asdasd', false, 303)
+ 3 SYSTEMPATH\HTTP\ResponseTrait.php(448): CodeIgniter\HTTP\Response->sendHeaders()
+ 4 SYSTEMPATH\CodeIgniter.php(1123): CodeIgniter\HTTP\Response->send()
+ 5 SYSTEMPATH\CodeIgniter.php(554): CodeIgniter\CodeIgniter->sendResponse()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:13:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:14:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:14:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:14:59 --> Header may not contain more than a single header, new line detected
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 478.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Header may not contain more than a single header, new line detected', 'SYSTEMPATH\\HTTP\\ResponseTrait.php', 478)
+ 2 SYSTEMPATH\HTTP\ResponseTrait.php(478): header('Location: https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20coba
+coba
+coba
+coba%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asd
+asd
+asd', false, 303)
+ 3 SYSTEMPATH\HTTP\ResponseTrait.php(448): CodeIgniter\HTTP\Response->sendHeaders()
+ 4 SYSTEMPATH\CodeIgniter.php(1123): CodeIgniter\HTTP\Response->send()
+ 5 SYSTEMPATH\CodeIgniter.php(554): CodeIgniter\CodeIgniter->sendResponse()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-10 12:16:42 --> Header may not contain more than a single header, new line detected
+in SYSTEMPATH\HTTP\ResponseTrait.php on line 478.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Header may not contain more than a single header, new line detected', 'SYSTEMPATH\\HTTP\\ResponseTrait.php', 478)
+ 2 SYSTEMPATH\HTTP\ResponseTrait.php(478): header('Location: https://api.whatsapp.com/send?phone=6283874897599&text=Subjek :%20test%20%0aNama :%20Customer 1%20%0aEmail :%20customer1@gmail.com%20%0aNo. WhatsApp :%206283874897599%20%0aPesan :%20----%20%0a%20%0a%20%0a---- Balasan Pihak Kami ------%20%0a%20%0aPesan Balasan :%20asd
+asd
+asd', false, 303)
+ 3 SYSTEMPATH\HTTP\ResponseTrait.php(448): CodeIgniter\HTTP\Response->sendHeaders()
+ 4 SYSTEMPATH\CodeIgniter.php(1123): CodeIgniter\HTTP\Response->send()
+ 5 SYSTEMPATH\CodeIgniter.php(554): CodeIgniter\CodeIgniter->sendResponse()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-10 12:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:18:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:18:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:18:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:26:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:26:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:26:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:26:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-10 12:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

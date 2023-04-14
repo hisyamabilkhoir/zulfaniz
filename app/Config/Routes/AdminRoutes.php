@@ -18,6 +18,11 @@ $routes->post('eshop-admin/profile/password/reset', 'AdminController::profile_re
 //menu
 $routes->get('eshop-admin/dashboard', 'AdminController::dashboard');
 $routes->get('eshop-admin/messages', 'AdminController::messages');
+$routes->post('eshop-admin/message/whatsapp', 'AdminController::message_whatsapp');
+$routes->post('eshop-admin/message/whatsapp/reply', 'AdminController::message_whatsapp_reply');
+$routes->post('eshop-admin/message/whatsapp/reply_send/(:any)', 'AdminController::message_whatsapp_reply_send/$1');
+$routes->post('eshop-admin/message/gmail', 'AdminController::message_gmail');
+$routes->get('eshop-admin/message/gmail/reply/(:any)', 'AdminController::message_gmail_reply/$1');
 
 
 
