@@ -707,6 +707,14 @@ class CustomerController extends BaseController
 
     public function order_update_status($snap_token, $status)
     {
+        $invoice = $this->invoiceModel->where('snap_token', $snap_token)->first();
+        $products = $this->orderModel->where('invoice_id', $invoice->id)->get()->getResultObject();
+        foreach ($products as $value) {
+            $product_variant = $this->productVariantModel->where('id', $value->product_variant_id)->first();
+            $this->productVariantModel->where('id', $value->product_variant_id)->set([
+                'stock' => $product_variant->stock - $value->qty,
+            ])->update();
+        }
         $this->invoiceModel->where('snap_token', $snap_token)->set([
             'status' => $status,
         ])->update();

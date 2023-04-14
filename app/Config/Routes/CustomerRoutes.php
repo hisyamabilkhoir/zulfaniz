@@ -1,5 +1,4 @@
 <?php
-
 //sebelum login
 $routes->get('/', 'CustomerController::home');
 $routes->get('/products', 'CustomerController::products');
@@ -39,5 +38,5 @@ $routes->post('/eshop-customer/get-cost', 'CustomerController::get_costs');
 $routes->post('/eshop-customer/checkout/process', 'CustomerController::process_checkout');
 $routes->get('/eshop-customer/order-histories', 'CustomerController::order_histories');
 $routes->get('/eshop-customer/order-history/(:any)', 'CustomerController::order_history/$1');
-$routes->get('/eshop-customer/order/(:segment)/status/(:alpha)/update', 'CustomerController::order_update_status/$1/$2');
 $routes->get('/eshop-customer/logout', 'CustomerController::logout');
+$routes->get('/eshop-customer/order/(:segment)/status/(:alpha)/update', 'CustomerController::order_update_status/$1/$2');
