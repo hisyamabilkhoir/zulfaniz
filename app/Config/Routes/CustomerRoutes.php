@@ -16,6 +16,7 @@ $routes->post('/process-registration', 'CustomerController::process_registration
 
 if (session()->get('logged_in_customer') == null) {
     $routes->get("eshop-customer/(:any)", "CustomerController::profile", ['filter' => 'login_customer']);
+    $routes->post("eshop-customer/(:any)", "CustomerController::profile", ['filter' => 'login_customer']);
 }
 
 if (session()->get('logged_in_customer')) {
