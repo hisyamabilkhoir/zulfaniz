@@ -700,7 +700,7 @@ class CustomerController extends BaseController
     public function order_histories()
     {
         $data = [
-            'invoices' => $this->invoiceModel->orderBy('invoice', 'asc')->findAll(),
+            'invoices' => $this->invoiceModel->where('customer_id', session()->get('customer_id'))->orderBy('invoice', 'asc')->findAll(),
         ];
         return view('customer/order_histories', $data);
     }
