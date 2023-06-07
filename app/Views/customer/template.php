@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="<?= base_url('/template_customer') ?>/css/owl-carousel.css">
     <!-- Slicknav -->
     <link rel="stylesheet" href="<?= base_url('/template_customer') ?>/css/slicknav.min.css">
+    <link rel="stylesheet" href="<?= base_url('/template_customer') ?>/css/pagination.css">
 
     <!-- Eshop StyleSheet -->
     <link rel="stylesheet" href="<?= base_url('/template_customer') ?>/css/reset.css">
@@ -302,6 +303,7 @@
     <script src="<?= base_url('/template_customer') ?>/js/easing.js"></script>
     <!-- Active JS -->
     <script src="<?= base_url('/template_customer') ?>/js/active.js"></script>
+    <script src="<?= base_url('/template_customer') ?>/js/pagination.min.js"></script>
 
     <?= $this->renderSection("page_script") ?>
 </body>

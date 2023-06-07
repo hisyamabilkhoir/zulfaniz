@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Produk Diskon</h2>
+                    <h2>Produk Populer</h2>
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
                             <p class="small-title">Kini Tersedia !</p>
                             <h3 class="title">Kerudung Syar'i lengkap dengan cadar</h3>
                             <p class="text">Kapan lagi mendapatkan produk dengan paket lengkap? tentunya harga murah dan barang berkualitas ! ayo sebelum kehabisan harga mulai dari :</p>
-                            <h1 class="price">Rp. 30.000<s>Rp. 100.000</s></h1>
+                            <h1 class="price">Rp. 15.000<s>Rp. 30.000</s></h1>
                             <div class="coming-time">
                                 <div class="clearfix" data-countdown="2023/06/30"></div>
                             </div>
