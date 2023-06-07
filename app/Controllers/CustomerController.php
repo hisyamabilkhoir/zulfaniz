@@ -518,6 +518,11 @@ class CustomerController extends BaseController
     public function checkout()
     {
         $carts = $this->cartModel->where('customer_id', session()->get('customer_id'))->findAll();
+        if ($carts == null) {
+            session()->setFlashdata("msg_status", "danger");
+            session()->setFlashdata("msg", "Keranjang kosong !");
+            return redirect()->back();
+        }
 
         foreach ($carts as $cart) {
             $data_product_variant = $this->productVariantModel->where('id', $cart->product_variant_id)->first();
