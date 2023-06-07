@@ -67,8 +67,10 @@
                                   Rp. ' . number_format($perhitungan_harga, 0, ",", ".") . '';
                     }
                     ?>
-                    <div class="quickview-stock">
-                        <span><i class="fa fa-check-circle-o"></i><?= $data_product_variant->stock; ?> in stock</span>
+                    <div id="stock">
+                        <div class="quickview-stock">
+                            <span><i class="fa fa-check-circle-o"></i><?= $data_product_variant->stock; ?> in stock</span>
+                        </div>
                     </div>
                 </div>
                 <h3 id="harga">
@@ -182,6 +184,17 @@
             },
             success: function(data) {
                 $("#harga").replaceWith(data);
+            }
+        });
+
+        $.ajax({
+            url: "<?= base_url('product/detail/select-variant-stock') ?>",
+            type: "post",
+            data: {
+                product_variant_id: $('#product_variant_id').val(),
+            },
+            success: function(data) {
+                $("#stock").replaceWith(data);
             }
         });
     });

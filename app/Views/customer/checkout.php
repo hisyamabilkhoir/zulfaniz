@@ -5,6 +5,16 @@
     <div class="container">
         <form class="form" method="post" action="<?= base_url('/eshop-customer/checkout/process') ?>">
             <div class="row">
+                <div class="col-12">
+                    <?php if (session('msg_status')) : ?>
+                        <div class="alert alert-<?= session('msg_status') ?> alert-dismissible fade show" role="alert">
+                            <?= session('msg'); ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
+                </div>
                 <div class="col-lg-8 col-12">
                     <div class="checkout-form">
                         <h2>Halaman Checkout</h2>

@@ -6,6 +6,7 @@ $routes->post('/products/by/category', 'CustomerController::products_by_category
 $routes->post('/products/search', 'CustomerController::products_search');
 $routes->get('/product/detail/(:any)', 'CustomerController::product_detail/$1');
 $routes->post('/product/detail/select-variant', 'CustomerController::product_detail_select_variant');
+$routes->post('/product/detail/select-variant-stock', 'CustomerController::product_detail_select_variant_stock');
 $routes->get('/contact', 'CustomerController::contact');
 $routes->post('/contact/send', 'CustomerController::contact_send');
 $routes->get('/eshop-customer', 'CustomerController::login');

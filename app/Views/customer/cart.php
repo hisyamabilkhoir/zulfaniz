@@ -46,12 +46,12 @@
 
                             ?>
                             <tr data-id="<?= $cart->id; ?>">
-                                <td class="image" data-title="No"><img style="height: 100px; width: 100px;" src="<?= base_url('product_images/' . $data_product_image->product_image); ?>"></td>
-                                <td class="product-des" data-title="Description">
-                                    <p class="product-name"><a href="<?= base_url('product/detail/' . $data_product->slug); ?>"><?= $data_product->title; ?> (<?= $data_product_variant->size; ?>)</a></p>
+                                <td class="image" data-title="Produk"><img style="height: 100px; width: 100px;" src="<?= base_url('product_images/' . $data_product_image->product_image); ?>"></td>
+                                <td class="product-des" data-title="Nama (Varian)">
+                                    <p class="product-name"><a href="<?= base_url('product/detail/' . $data_product->slug); ?>"><?= $data_product->title; ?> (<?= $data_product_variant->size; ?>) <br> <small style="color: red;">sisa : <?= $data_product_variant->stock; ?></small> </a></p>
                                     <p class="product-des"><?= $data_product->content; ?></p>
                                 </td>
-                                <td class="price" data-title="Price"><span>Rp. <?= number_format($cart->price, 0, ",", ".") ?></span></td>
+                                <td class="price" data-title="Harga"><span>Rp. <?= number_format($cart->price, 0, ",", ".") ?></span></td>
                                 <td class="qty" data-title="Qty">
                                     <div class="input-group">
                                         <div class="button minus">
@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="total-amount" data-title="Total">
+                                <td class="total-amount" data-title="Subtotal">
                                     <?php
                                     $subTotal = $cart->quantity * $cart->price;
                                     ?>
@@ -76,7 +76,7 @@
                                     $total += $subTotal;
                                     ?>
                                 </td>
-                                <td class="action remove-from-cart" data-title="Remove"><i class="ti-trash remove-icon"></i></td>
+                                <td class="action remove-from-cart" data-title="Hapus"><i class="ti-trash remove-icon"></i></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

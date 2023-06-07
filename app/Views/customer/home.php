@@ -30,50 +30,7 @@
 </section>
 <!--/ End Slider Area -->
 
-<!-- Start Small Banner  -->
-<section class="small-banner section">
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Single Banner  -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="single-banner">
-                    <img style="height: 800px;" src="<?= base_url('banner/3.jpg') ?>">
-                    <!-- <div class="content">
-                        <p>Tersedia !</p>
-                        <h3>Berbagai <br> Jenis Kain</h3>
-                        <a style="margin-top: -10px;" href="<?= base_url('products') ?>">Belanja Sekarang</a>
-                    </div> -->
-                </div>
-            </div>
-            <!-- /End Single Banner  -->
-            <!-- Single Banner  -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="single-banner">
-                    <img style="height: 800px;" src="<?= base_url('banner/26.jpg') ?>" alt="#">
-                    <!-- <div class="content">
-                        <p>Tersedia !</p>
-                        <h3>Berbagai <br> Jenis Hijab</h3>
-                        <a style="margin-top: -10px;" href="<?= base_url('products') ?>">Belanja Sekarang</a>
-                    </div> -->
-                </div>
-            </div>
-            <!-- /End Single Banner  -->
-            <!-- Single Banner  -->
-            <div class="col-lg-4 col-12">
-                <div class="single-banner tab-height">
-                    <img style="height: 800px;" src="<?= base_url('banner/28.jpg') ?>" alt="#">
-                    <!-- <div class="content">
-                        <p>Tersedia !</p>
-                        <h3>Berbagai <br> Jenis Busana Mulimah</h3>
-                        <a style="margin-top: -10px;" href="<?= base_url('products') ?>">Belanja Sekarang</a>
-                    </div> -->
-                </div>
-            </div>
-            <!-- /End Single Banner  -->
-        </div>
-    </div>
-</section>
-<!-- End Small Banner -->
+
 
 
 <!-- Start Most Popular -->
@@ -82,7 +39,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Produk Poluler</h2>
+                    <h2>Produk Diskon</h2>
                 </div>
             </div>
         </div>
@@ -124,6 +81,7 @@
                                 <h3><a href="<?= base_url('product/detail/' . $product->slug) ?>"><?= $product->title; ?></a></h3>
                                 <div class="product-price">
                                     <?= $harga; ?>
+                                    (<?= $data_product_variant->size; ?>)
                                 </div>
                             </div>
                         </div>
@@ -155,7 +113,7 @@
                             <p class="text">Kapan lagi mendapatkan produk dengan paket lengkap? tentunya harga murah dan barang berkualitas ! ayo sebelum kehabisan harga mulai dari :</p>
                             <h1 class="price">Rp. 30.000<s>Rp. 100.000</s></h1>
                             <div class="coming-time">
-                                <div class="clearfix" data-countdown="2023/05/30"></div>
+                                <div class="clearfix" data-countdown="2023/06/30"></div>
                             </div>
                         </div>
                     </div>
