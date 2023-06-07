@@ -363,9 +363,33 @@ class CustomerController extends BaseController
 
         $data = [
             'harga' => $harga,
+            'stock' => $product_variant->stock,
         ];
 
         return view('customer/ajax/product_detail_select_variant', $data);
+    }
+
+    public function product_detail_select_variant_stock()
+    {
+        $product_variant_id = $this->request->getPost('product_variant_id');
+
+        $product_variant = $this->productVariantModel->where('id', $product_variant_id)->first();
+
+        if ($product_variant->stock == 0) {
+            $icon = 'fa fa-times-circle-o';
+            $color = 'color: red;';
+        } else {
+            $icon = 'fa fa-check-circle-o';
+            $color = 'color: green;';
+        }
+
+        $data = [
+            'stock' => $product_variant->stock,
+            'icon'  => $icon,
+            'color'  => $color,
+        ];
+
+        return view('customer/ajax/product_detail_select_variant_stock', $data);
     }
 
     public function contact()
@@ -424,6 +448,18 @@ class CustomerController extends BaseController
         $cart = $this->cartModel->where('product_variant_id', $product_variant_id)->where('customer_id', session()->get('customer_id'))->first();
         $data_product_variant = $this->productVariantModel->where('id', $product_variant_id)->first();
 
+        if ($data_product_variant->stock == 0) {
+            session()->setFlashdata("msg_status", "danger");
+            session()->setFlashdata("msg", "Barang varian : $data_product_variant->size gagal dimasukan ke dalam keranjang, stok kosong !");
+            return redirect()->back();
+        }
+
+        if ($data_product_variant->stock - $quantity < 0) {
+            session()->setFlashdata("msg_status", "danger");
+            session()->setFlashdata("msg", "Barang varian : $data_product_variant->size gagal dimasukan ke dalam keranjang, jumlah beli melebihi stok yang ada !");
+            return redirect()->back();
+        }
+
         if ($cart) {
             $this->cartModel->update($cart->id, ([
                 "quantity" => $cart->quantity + $quantity,
@@ -449,7 +485,7 @@ class CustomerController extends BaseController
         }
 
         session()->setFlashdata("msg_status", "success");
-        session()->setFlashdata("msg", "Barang berhasil dimasukan ke dalam keranjang !");
+        session()->setFlashdata("msg", "Barang varian : $data_product_variant->size berhasil dimasukan ke dalam keranjang !");
 
         return redirect()->back();
     }
@@ -481,6 +517,23 @@ class CustomerController extends BaseController
 
     public function checkout()
     {
+        $carts = $this->cartModel->where('customer_id', session()->get('customer_id'))->findAll();
+
+        foreach ($carts as $cart) {
+            $data_product_variant = $this->productVariantModel->where('id', $cart->product_variant_id)->first();
+            if ($data_product_variant->stock == 0) {
+                session()->setFlashdata("msg_status", "danger");
+                session()->setFlashdata("msg", "Barang varian : $data_product_variant->size gagal checkout, stok kosong !");
+                return redirect()->back();
+            }
+
+            if ($data_product_variant->stock - $cart->quantity < 0) {
+                session()->setFlashdata("msg_status", "danger");
+                session()->setFlashdata("msg", "Barang varian : $data_product_variant->size gagal checkout, jumlah beli melebihi stok yang ada !");
+                return redirect()->back();
+            }
+        }
+
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -584,6 +637,23 @@ class CustomerController extends BaseController
     }
     public function process_checkout()
     {
+        $carts = $this->cartModel->where('customer_id', session()->get('customer_id'))->findAll();
+
+        foreach ($carts as $cart) {
+            $data_product_variant = $this->productVariantModel->where('id', $cart->product_variant_id)->first();
+            if ($data_product_variant->stock == 0) {
+                session()->setFlashdata("msg_status", "danger");
+                session()->setFlashdata("msg", "Barang varian : $data_product_variant->size gagal checkout, stok kosong !");
+                return redirect()->to(base_url("/eshop-customer/cart"));
+            }
+
+            if ($data_product_variant->stock - $cart->quantity < 0) {
+                session()->setFlashdata("msg_status", "danger");
+                session()->setFlashdata("msg", "Barang varian : $data_product_variant->size gagal checkout, jumlah beli melebihi stok yang ada !");
+                return redirect()->to(base_url("/eshop-customer/cart"));
+            }
+        }
+
         $weight = $this->request->getPost('weight');
         $grand_total = $this->request->getPost('grand_total');
         $name = $this->request->getPost('name');

@@ -65,6 +65,7 @@
                                                     <h3><a href="<?= base_url('product/detail/' . $product->slug) ?>"><?= $product->title; ?></a></h3>
                                                     <div class="product-price">
                                                         <?= $harga; ?>
+                                                        (<?= $data_product_variant->size; ?>)
                                                     </div>
                                                 </div>
                                             </div>
@@ -120,6 +121,7 @@
                                                             <h3><a href="<?= base_url('product/detail/' . $product->slug) ?>"><?= $product->title; ?></a></h3>
                                                             <div class="product-price">
                                                                 <?= $harga; ?>
+                                                                (<?= $data_product_variant->size; ?>)
                                                             </div>
                                                         </div>
                                                     </div>
