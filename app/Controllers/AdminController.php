@@ -6,6 +6,7 @@ class AdminController extends BaseController
 {
     private $adminModel;
     private $invoiceModel;
+    private $orderModel;
     private $messageModel;
 
     public function __construct()
@@ -17,6 +18,7 @@ class AdminController extends BaseController
         helper("form");
         $this->adminModel = new \App\Models\AdministratorModel();
         $this->invoiceModel = new \App\Models\InvoiceModel();
+        $this->orderModel = new \App\Models\OrderModel();
         $this->messageModel = new \App\Models\MessageModel();
     }
     public function create_admin()
@@ -208,9 +210,24 @@ class AdminController extends BaseController
         $start_month = date('Y') . '-01-01';
         $end_month = date('Y') . '-12-31';
 
-        $totalCurrentMonth = $this->invoiceModel->selectSum('grand_total')->where("order_date BETWEEN '$start_date' AND '$end_date' ")->first();
-        $totalCurrentYear = $this->invoiceModel->selectSum('grand_total')->where("order_date BETWEEN '$start_month' AND '$end_month' ")->first();
-        $total = $this->invoiceModel->selectSum('grand_total')->first();
+        $CurrentMonth = $this->orderModel->select('qty, price')->join('invoices', 'orders.invoice_id = invoices.id')->where("order_date BETWEEN '$start_date' AND '$end_date' ")->get()->getResult();
+        $totalCurrentMonth = 0;
+        foreach ($CurrentMonth as $data) {
+            $total = $data->qty * $data->price;
+            $totalCurrentMonth += $total;
+        }
+        $CurrentYear = $this->orderModel->select('qty, price')->join('invoices', 'orders.invoice_id = invoices.id')->where("order_date BETWEEN '$start_month' AND '$end_month' ")->get()->getResult();
+        $totalCurrentYear = 0;
+        foreach ($CurrentYear as $data) {
+            $total = $data->qty * $data->price;
+            $totalCurrentYear += $total;
+        }
+        $AllTimetotal = $this->orderModel->select('qty, price')->join('invoices', 'orders.invoice_id = invoices.id')->get()->getResult();
+        $total = 0;
+        foreach ($AllTimetotal as $data) {
+            $subTotal = $data->qty * $data->price;
+            $total += $subTotal;
+        }
         // $invoiceData->sum('')->where
         $data = [
             'totalCurrentMonth' => $totalCurrentMonth,

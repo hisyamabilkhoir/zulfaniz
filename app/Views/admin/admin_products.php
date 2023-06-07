@@ -43,7 +43,6 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th>Kategori</th>
-                                    <th>Konten</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
@@ -57,7 +56,6 @@
                                         <td align="text-center"><?= $d ?></td>
                                         <td><?= $product->title ?></td>
                                         <td><?= $product->category_name ?></td>
-                                        <td><?= htmlspecialchars($product->content) ?></td>
                                         <td class='text-center'>
                                             <a href="<?= base_url('eshop-admin/products/view_edit/' . $product->id); ?>" class="btn btn-success btn-sm text-white">
                                                 <i class="fa fa-edit"></i>
