@@ -160,6 +160,18 @@
                             <span class="sidebar-mini-icon">
                                 <i class="fa fa-ellipsis-h"></i>
                             </span>
+                            <h4 class="text-section">Laporan</h4>
+                        </li>
+                        <li class="nav-item <?= ($uri->getSegment(2) === "report-orders") ? "active" : "" ?>">
+                            <a href="<?= base_url('eshop-admin/report-orders') ?>">
+                                <i class="fas fa-file-archive"></i>
+                                <p>Laporan penjualan</p>
+                            </a>
+                        </li>
+                        <li class="nav-section">
+                            <span class="sidebar-mini-icon">
+                                <i class="fa fa-ellipsis-h"></i>
+                            </span>
                             <h4 class="text-section">Akun Pengguna</h4>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(2) === "customer-accounts") ? "active" : "" ?>">

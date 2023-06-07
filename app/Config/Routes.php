@@ -37,6 +37,7 @@ require "Routes/CustomerAccountRoutes.php";
 require "Routes/AdminCategoryRoutes.php";
 require "Routes/AdminProductRoutes.php";
 require "Routes/OrderRoutes.php";
+require "Routes/AdminReportRoutes.php";
 
 /*
  * --------------------------------------------------------------------
