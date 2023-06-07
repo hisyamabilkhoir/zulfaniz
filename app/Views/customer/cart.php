@@ -49,7 +49,6 @@
                                 <td class="image" data-title="Produk"><img style="height: 100px; width: 100px;" src="<?= base_url('product_images/' . $data_product_image->product_image); ?>"></td>
                                 <td class="product-des" data-title="Nama (Varian)">
                                     <p class="product-name"><a href="<?= base_url('product/detail/' . $data_product->slug); ?>"><?= $data_product->title; ?> (<?= $data_product_variant->size; ?>) <br> <small style="color: red;">sisa : <?= $data_product_variant->stock; ?></small> </a></p>
-                                    <p class="product-des"><?= $data_product->content; ?></p>
                                 </td>
                                 <td class="price" data-title="Harga"><span>Rp. <?= number_format($cart->price, 0, ",", ".") ?></span></td>
                                 <td class="qty" data-title="Qty">
