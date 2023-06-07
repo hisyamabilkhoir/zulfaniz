@@ -501,16 +501,19 @@ class CustomerController extends BaseController
 
         curl_close($curl);
         $carts = $this->cartModel->where('customer_id', session()->get('customer_id'))->findAll();
+        $address = $this->customerModel->select('address')->where('id', session()->get('customer_id'))->first();
         $grandTotal = 0;
         $weightTotal = 0;
         foreach ($carts as $key => $value) {
             $grandTotal += $value->price * $value->quantity;
             $weightTotal += $value->weight * $value->quantity;
         }
+
         $data = [
             'provinces' => json_decode($response, true)['rajaongkir']['results'],
             'grandTotal' => $grandTotal,
             'weightTotal' => $weightTotal,
+            'address' => $address,
         ];
         return view('customer/checkout', $data);
     }
@@ -700,7 +703,7 @@ class CustomerController extends BaseController
     public function order_histories()
     {
         $data = [
-            'invoices' => $this->invoiceModel->where('customer_id', session()->get('customer_id'))->orderBy('invoice', 'asc')->findAll(),
+            'invoices' => $this->invoiceModel->where('customer_id', session()->get('customer_id'))->orderBy('order_date', 'desc')->findAll(),
         ];
         return view('customer/order_histories', $data);
     }

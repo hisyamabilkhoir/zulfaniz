@@ -88,7 +88,7 @@
                 <th class='text-center'>Nama Penerima</th>
                 <th class='text-center'>Produk</th>
                 <th class='text-center'>Tgl.Pesanan</th>
-                <th class='text-center'>Harga</th>
+                <th class='text-center'>Harga Produk</th>
                 <th class='text-center'>Kuantitas</th>
                 <th class='text-center'>Total</th>
             </tr>

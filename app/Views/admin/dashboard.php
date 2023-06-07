@@ -21,7 +21,7 @@
                         <div class="col-7 col-stats">
                             <div class="numbers">
                                 <p class="card-category text-primary">Pendapatan Bulan Ini</p>
-                                <h4 class="card-title">Rp. <?= number_format($totalCurrentMonth->grand_total, 0, ",", "."); ?></h4>
+                                <h4 class="card-title">Rp. <?= number_format($totalCurrentMonth, 0, ",", "."); ?></h4>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                         <div class="col-7 col-stats">
                             <div class="numbers">
                                 <p class="card-category text-warning">Pendapatan Tahun Ini</p>
-                                <h4 class="card-title">Rp. <?= number_format($totalCurrentYear->grand_total, 0, ",", "."); ?></h4>
+                                <h4 class="card-title">Rp. <?= number_format($totalCurrentYear, 0, ",", "."); ?></h4>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         <div class="col-7 col-stats">
                             <div class="numbers">
                                 <p class="card-category text-success">Semua Pendapatan</p>
-                                <h4 class="card-title">Rp. <?= number_format($total->grand_total, 0, ",", "."); ?></h4>
+                                <h4 class="card-title">Rp. <?= number_format($total, 0, ",", "."); ?></h4>
                             </div>
                         </div>
                     </div>

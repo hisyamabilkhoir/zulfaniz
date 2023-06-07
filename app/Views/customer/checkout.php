@@ -57,7 +57,22 @@
                             <div class="col-lg-12 col-md-12 col-12">
                                 <div class="form-group">
                                     <label>Alamat<span>*</span></label>
-                                    <textarea style="background-color: #f6f7fb; border: none;" name="address" placeholder="  Masukan alamat . . ." required></textarea>
+                                </div>
+                                <div class="m-sm-4">
+                                    <div class="form-check form-check-inline w-25">
+                                        <input class="form-check-input" type="radio" checked onclick="changeAddress('my_address')" name="option_address" id="my_address">
+                                        <label class="form-check-label" for="my_address">Alamat Saya</label>
+                                    </div>
+                                    <div class="form-check form-check-inline w-25">
+                                        <input class="form-check-input" type="radio" name="option_address" onclick="changeAddress('new_address')" id="new_address">
+                                        <label class="form-check-label" for="new_address">Input Baru</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-group">
+
+                                    <textarea style="background-color: #f6f7fb; border: none;" readonly name="address" id="address" placeholder="  Masukan alamat . . ." required><?= $address->address ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -109,6 +124,18 @@
             }
         });
     });
+
+    function changeAddress(address) {
+        if (address == 'my_address') {
+            $('#address').val('<?= $address->address ?>');
+            $('#address').attr('readonly', true);
+            $("#my_address").prop("checked", true);
+        } else {
+            $('#address').val('');
+            $('#address').removeAttr('readonly');
+            $("#new_address").prop("checked", true);
+        }
+    }
 
     function checkKurir(name) {
         $.ajax({
