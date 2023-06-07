@@ -53,7 +53,7 @@
                         </div>
                         <div class="form-group">
                             <label for="phone"> Nomor Telepon </label>
-                            <input type="text" class="form-control <?= ($validation->hasError('phone')) ? 'is-invalid' : ''; ?>" name="phone" id="phone" placeholder="Masukan nomor telepon . . . " value="<?= set_value('phone'); ?>" required autocomplete="off">
+                            <input type="number" class="form-control <?= ($validation->hasError('phone')) ? 'is-invalid' : ''; ?>" name="phone" id="phone" placeholder="Masukan nomor telepon . . . " value="<?= set_value('phone'); ?>" required autocomplete="off">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('phone'); ?>
                             </div>

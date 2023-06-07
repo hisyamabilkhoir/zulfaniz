@@ -20,7 +20,7 @@ class AdminOrderController extends BaseController
     public function admin_orders()
     {
         $data = [
-            'invoices' => $this->invoiceModel->orderBy('invoice', 'asc')->findAll(),
+            'invoices' => $this->invoiceModel->orderBy('order_date', 'desc')->findAll(),
         ];
         return view('admin/admin_orders', $data);
     }
