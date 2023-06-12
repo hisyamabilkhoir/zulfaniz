@@ -2,7 +2,7 @@
 
 <?= $this->section("page_title") ?>
 <div class="page-header">
-    <h4 class="page-title" style="color: white;">Laporan Pembelian</h4>
+    <h4 class="page-title" style="color: white;">Laporan Penjualan</h4>
     <ul class="breadcrumbs">
         <li class="nav-home">
             <a style="color: white;" href="<?= base_url('eshop-admin/dashboard'); ?>">
@@ -13,7 +13,7 @@
             <i class="flaticon-right-arrow text-white"></i>
         </li>
         <li class="nav-item">
-            <a style="color: white;" href="<?= base_url('eshop-admin/report-orders'); ?>">Laporan Pembelian</a>
+            <a style="color: white;" href="<?= base_url('eshop-admin/report-orders'); ?>">Laporan Penjualan</a>
         </li>
     </ul>
 </div>

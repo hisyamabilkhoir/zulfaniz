@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="form-check form-check-inline w-25">
                                         <input class="form-check-input" type="radio" name="option_address" onclick="changeAddress('new_address')" id="new_address">
-                                        <label class="form-check-label" for="new_address">Input Baru</label>
+                                        <label class="form-check-label" for="new_address">Alamat Baru</label>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                         <div class="single-widget get-button">
                             <div class="content">
                                 <div class="button">
-                                    <button type="submit" class="btn">Proses Checkout</button>
+                                    <button type="submit" class="btn">Lanjut Pembayaran</button>
                                 </div>
                             </div>
                         </div>
