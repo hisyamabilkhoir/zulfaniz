@@ -521,7 +521,7 @@ class CustomerController extends BaseController
         if ($carts == null) {
             session()->setFlashdata("msg_status", "danger");
             session()->setFlashdata("msg", "Keranjang kosong !");
-            return redirect()->back();
+            return redirect()->to(base_url('eshop-customer/cart'));
         }
 
         foreach ($carts as $cart) {
@@ -529,13 +529,13 @@ class CustomerController extends BaseController
             if ($data_product_variant->stock == 0) {
                 session()->setFlashdata("msg_status", "danger");
                 session()->setFlashdata("msg", "Barang varian : $data_product_variant->size gagal checkout, stok kosong !");
-                return redirect()->back();
+                return redirect()->to(base_url('eshop-customer/cart'));
             }
 
             if ($data_product_variant->stock - $cart->quantity < 0) {
                 session()->setFlashdata("msg_status", "danger");
                 session()->setFlashdata("msg", "Barang varian : $data_product_variant->size gagal checkout, jumlah beli melebihi stok yang ada !");
-                return redirect()->back();
+                return redirect()->to(base_url('eshop-customer/cart'));
             }
         }
 
