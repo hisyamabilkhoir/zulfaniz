@@ -420,9 +420,9 @@ class CustomerController extends BaseController
         $this->messageModel->insert($dataInsert);
 
         session()->setFlashdata("msg_status", "success");
-        session()->setFlashdata("msg", "Pesan Terkirim ! Tunggu balasan pada email (spam) atau nomor whatsapp paling lambat 1 x 24 jam");
+        session()->setFlashdata("msg", "Pesan Terkirim ! Tunggu balasan pada email atau nomor whatsapp paling lambat 1 x 24 jam");
 
-        return redirect()->back();
+        return redirect()->to(base_url('/contact'));
     }
 
     public function cart()
@@ -521,7 +521,7 @@ class CustomerController extends BaseController
         if ($carts == null) {
             session()->setFlashdata("msg_status", "danger");
             session()->setFlashdata("msg", "Keranjang kosong !");
-            return redirect()->back();
+            return redirect()->to(base_url('eshop-customer/cart'));
         }
 
         foreach ($carts as $cart) {
@@ -529,13 +529,13 @@ class CustomerController extends BaseController
             if ($data_product_variant->stock == 0) {
                 session()->setFlashdata("msg_status", "danger");
                 session()->setFlashdata("msg", "Barang varian : $data_product_variant->size gagal checkout, stok kosong !");
-                return redirect()->back();
+                return redirect()->to(base_url('eshop-customer/cart'));
             }
 
             if ($data_product_variant->stock - $cart->quantity < 0) {
                 session()->setFlashdata("msg_status", "danger");
                 session()->setFlashdata("msg", "Barang varian : $data_product_variant->size gagal checkout, jumlah beli melebihi stok yang ada !");
-                return redirect()->back();
+                return redirect()->to(base_url('eshop-customer/cart'));
             }
         }
 

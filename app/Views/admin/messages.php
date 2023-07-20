@@ -85,10 +85,10 @@
                         <input type="hidden" name="id" id="detailID">
                         <button type="submit" class="btn btn-success">WhatsApp</button>
                     </form>
-                    <form class="d-inline" action="<?= base_url('eshop-admin/message/gmail') ?>" method="post">
+                    <!-- <form class="d-inline" action="<?= base_url('eshop-admin/message/gmail') ?>" method="post">
                         <input type="hidden" name="id" id="detailIDGmail">
                         <button type="submit" class="btn btn-warning">Gmail</button>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
