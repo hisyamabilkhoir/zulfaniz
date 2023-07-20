@@ -20,15 +20,15 @@
         <br>
         <div class="m-sm-4">
         <div class="form-check form-check-inline w-25">
-        <input class="form-check-input" onclick="checkKurir('jne')" type="radio" name="courier" id="jne" value="jne">
+        <input class="form-check-input" onclick="checkKurir('jne')" type="radio" name="courier" id="jne" value="jne" required>
         <label class="form-check-label" for="jne">JNE</label>
         </div>
         <div class="form-check form-check-inline w-25">
-        <input class="form-check-input" onclick="checkKurir('tiki')" type="radio" name="courier" id="tiki" value="tiki">
+        <input class="form-check-input" onclick="checkKurir('tiki')" type="radio" name="courier" id="tiki" value="tiki" required>
         <label class="form-check-label" for="tiki">Tiki</label>
         </div>
         <div class="form-check form-check-inline w-25">
-        <input class="form-check-input" onclick="checkKurir('pos')" type="radio" name="courier" id="pos" value="pos">
+        <input class="form-check-input" onclick="checkKurir('pos')" type="radio" name="courier" id="pos" value="pos" required>
         <label class="form-check-label" for="pos">POS</label>
         </div>
         </div>

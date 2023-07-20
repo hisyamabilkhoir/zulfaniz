@@ -44,7 +44,7 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>Provinsi<span>*</span></label>
-                                    <select name="province" id="province">
+                                    <select name="province" id="province" required>
                                         <option value="" disabled selected>Pilih Provinsi</option>
                                         <?php foreach ($provinces as $key => $value) : ?>
                                             <option value="<?= (int)$value['province_id'] ?>"><?= $value['province'] ?></option>
@@ -55,7 +55,7 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group" id="city">
                                     <label>Kota<span>*</span></label>
-                                    <select name="city" id="select_city">
+                                    <select name="city" id="select_city" required>
                                         <option value="" disabled selected>Pilih provinsi terlebih dahulu</option>
                                     </select>
                                 </div>
