@@ -18,6 +18,7 @@
                 <!-- Shopping Summery -->
                 <!-- test -->
                 <table class="table shopping-summery">
+                    <!-- table -->
                     <thead>
                         <tr class="main-hading">
                             <th>PRODUK</th>
