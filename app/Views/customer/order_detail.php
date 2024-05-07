@@ -38,7 +38,7 @@
                                 <h2><?= $product->product_name; ?></h2>
                                 <h3>Varian : <?= $product->variant_name; ?></h3>
                                 <h3 id="QTY">
-                                    Kuatntitas : <?= number_format($product->qty, 0, ",", "."); ?>
+                                    Kuantitas : <?= number_format($product->qty, 0, ",", "."); ?>
                                 </h3>
                                 <h3 id="harga">
                                     Harga : Rp. <?= number_format($product->price, 0, ",", "."); ?>

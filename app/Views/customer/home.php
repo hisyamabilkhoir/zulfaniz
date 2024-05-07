@@ -113,7 +113,7 @@
                             <p class="text">Kapan lagi mendapatkan produk dengan paket lengkap? tentunya harga murah dan barang berkualitas ! ayo sebelum kehabisan harga mulai dari :</p>
                             <h1 class="price">Rp. 15.000<s>Rp. 30.000</s></h1>
                             <div class="coming-time">
-                                <div class="clearfix" data-countdown="2023/06/30"></div>
+                                <div class="clearfix" data-countdown="2024/01/30"></div>
                             </div>
                         </div>
                     </div>
