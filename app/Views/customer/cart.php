@@ -16,6 +16,7 @@
             </div>
             <div class="col-12">
                 <!-- Shopping Summery -->
+                <!-- test -->
                 <table class="table shopping-summery">
                     <thead>
                         <tr class="main-hading">
